@@ -5,11 +5,24 @@
     <classes>
       <class name="com.edge.GFS.online.TestGFSOnline">
         <methods>
-          <include name="AfterClass"/>
+          <include name="Bottega_GFS"/>
+          <include name="SportsGrillSouthMiami_GFS"/>
+          <include name="Gilberts_GFS"/>
+          <include name="SportsGrillKendall_GFS"/>
+          <include name="TownKitchen_GFS"/>
+          <include name="SportsGrillPalmetto_GFS"/>
+          <include name="BigPink_Prime_GFS"/>
+          <include name="ConchRep_GFS"/>
+          <include name="Liguoris_GFS"/>
+          <include name="SportsGrillSunset_GFS"/>
           <include name="beforeTest"/>
           <include name="setup"/>
+          <include name="Hamiltons_GFS"/>
+          <include name="SportsGrillPembroke_GFS"/>
           <include name="Woodfield_GFS"/>
-          <include name="pretearDown"/>
+          <include name="Espositos_GFS"/>
+          <include name="OldKeyLime_GFS"/>
+          <include name="Talavera_GFS"/>
         </methods>
       </class> <!-- com.edge.GFS.online.TestGFSOnline -->
     </classes>
