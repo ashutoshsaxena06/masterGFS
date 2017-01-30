@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="32090" started-at="2017-01-29T20:52:51Z" finished-at="2017-01-29T20:53:23Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="32090" started-at="2017-01-29T20:52:51Z" finished-at="2017-01-29T20:53:23Z">
+      <class name="com.edge.GFS.online.TestGFSOnline">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="beforeTest" is-config="true" duration-ms="6516" started-at="2017-01-30T02:22:51Z" finished-at="2017-01-30T02:22:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="setup" is-config="true" duration-ms="1" started-at="2017-01-30T02:22:57Z" finished-at="2017-01-30T02:22:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Espositos_GFS()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="Espositos_GFS" duration-ms="24734" started-at="2017-01-30T02:22:57Z" finished-at="2017-01-30T02:23:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Espositos_GFS -->
+        <test-method status="PASS" signature="AfterClass()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="AfterClass" is-config="true" duration-ms="0" started-at="2017-01-30T02:23:22Z" finished-at="2017-01-30T02:23:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterClass -->
+        <test-method status="PASS" signature="pretearDown()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="pretearDown" is-config="true" duration-ms="815" started-at="2017-01-30T02:23:22Z" finished-at="2017-01-30T02:23:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pretearDown -->
+      </class> <!-- com.edge.GFS.online.TestGFSOnline -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
