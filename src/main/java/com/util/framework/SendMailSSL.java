@@ -39,7 +39,7 @@ public class SendMailSSL {
 		
 		Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("orders.diningedge@gmail.com", "edge2016");// change
+				return new PasswordAuthentication("onlineweekend.diningedge@gmail.com", "edge2016");// change
 																								// accordingly
 			}
 		});
@@ -81,7 +81,7 @@ public class SendMailSSL {
 			// get connection
 			Session session = createConnection();
 			//String filepath = RandomAction.setdownloadDir();
-			File GFS_OG = RandomAction.getLatestFilefromDir("C:\\Users\\ashsaxen\\Downloads\\");
+			File GFS_OG = RandomAction.getLatestFilefromDir("C:\\Users\\Edge\\Downloads\\");
 			String filename = GFS_OG.getAbsolutePath();
 			System.out.println(filename);
 			

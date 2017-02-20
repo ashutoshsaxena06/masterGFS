@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="49" failures="1" name="com.edge.GFS.online.TestGFSOnline" time="1.29" errors="0" skipped="48">
+<testsuite tests="19" failures="1" name="com.edge.GFS.online.TestGFSOnline" time="266.441" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -27,7 +27,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
     <property name="os.name" value="Windows Server 2012 R2"/>
-    <property name="classworlds.conf" value="C:\Users\Edge\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf9162328049938282498.tmp"/>
+    <property name="classworlds.conf" value="C:\Users\Edge\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf7517674317771638385.tmp"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
     <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_121\bin;C:\windows\Sun\Java\bin;C:\windows\system32;C:\windows;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_121/bin/../jre/lib/amd64;C:\Program Files\Java\jdk1.8.0_121\bin;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\ESET\ESET File Security\;C:\Softwares\eclipse-jee-mars-2-win32-x86_64\eclipse;;."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,165 +61,41 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="1.281">
-    <failure message="The driver executable does not exist: C:\Users\ashsaxen\Downloads\chromedriver_win32\chromedriver.exe" type="java.lang.IllegalStateException">java.lang.IllegalStateException: The driver executable does not exist: C:\Users\ashsaxen\Downloads\chromedriver_win32\chromedriver.exe
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:199)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:121)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:116)
-	at org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:32)
-	at org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:137)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:296)
-	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:120)
-	at com.edge.GFS.online.TestGFSOnline.beforeTest(TestGFSOnline.java:46)
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Espositos_GFS" time="17.317"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Liguoris_GFS" time="14.198"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Gilberts_GFS" time="13.896"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="OldKeyLime_GFS" time="14.351"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillSunset_GFS" time="14.436"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillKendall_GFS" time="15.125"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillPembroke_GFS" time="14.785"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillPalmetto_GFS" time="15.049"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillSouthMiami_GFS" time="12.551"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Talavera_GFS" time="13.762"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="TownKitchen_GFS" time="14.087"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="BigPink_GFS" time="12.893"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Hamiltons_GFS" time="16.184"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="ConchRep_GFS" time="13.885"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Woodfield_GFS" time="13.993"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Bottega_GFS" time="18.804"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Strebs_GFS" time="1.238">
+    <failure message="expected:&lt;....gfs.com/experience/[main/portal.html]&gt; but was:&lt;....gfs.com/experience/[portal/j_security_check]&gt;" type="junit.framework.ComparisonFailure">junit.framework.ComparisonFailure: expected:&lt;....gfs.com/experience/[main/portal.html]&gt; but was:&lt;....gfs.com/experience/[portal/j_security_check]&gt;
+	at junit.framework.Assert.assertEquals(Assert.java:85)
+	at junit.framework.Assert.assertEquals(Assert.java:91)
+	at com.edge.GFS.online.CommonGFS.StepsToExport(CommonGFS.java:159)
+	at com.edge.GFS.online.TestGFSOnline.Strebs_GFS(TestGFSOnline.java:277)
 </failure>
-    <system-out>Configuring TestNG with: TestNG652Configurator
-*************GFS************
+    <system-out>*******EndTest*********
 ***********StartTest*********
+Login Successful
 </system-out>
+    <system-err>Starting ChromeDriver 2.27.440174 (e97a722caafc2d3a8b807ee115bfb307f7d2cfd9) on port 20335
+Only local connections are allowed.
+Feb 20, 2017 6:37:18 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Attempting bi-dialect session, assuming Postel&apos;s Law holds true on the remote end
+Feb 20, 2017 6:37:19 AM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: OSS
+</system-err>
   </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Espositos_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Liguoris_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0.001">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0.001">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Gilberts_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="OldKeyLime_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillSunset_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillKendall_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillPembroke_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillPalmetto_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="SportsGrillSouthMiami_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Talavera_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="TownKitchen_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0.007">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="BigPink_Prime_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Hamiltons_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="ConchRep_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Woodfield_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="beforeTest" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Bottega_GFS" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="pretearDown" time="0">
-    <skipped/>
-  </testcase>
-  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="AfterClass" time="0">
-    <skipped/>
-  </testcase>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="Prime112_GFS" time="15.662"/>
+  <testcase classname="com.edge.GFS.online.TestGFSOnline" name="TrumpIntl_GFS" time="14.225"/>
 </testsuite>

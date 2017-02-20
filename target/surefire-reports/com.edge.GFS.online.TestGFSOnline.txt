@@ -1,16 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: com.edge.GFS.online.TestGFSOnline
 -------------------------------------------------------------------------------
-Tests run: 49, Failures: 1, Errors: 0, Skipped: 48, Time elapsed: 1.75 sec <<< FAILURE!
-beforeTest(com.edge.GFS.online.TestGFSOnline)  Time elapsed: 1.281 sec  <<< FAILURE!
-java.lang.IllegalStateException: The driver executable does not exist: C:\Users\ashsaxen\Downloads\chromedriver_win32\chromedriver.exe
-	at com.google.common.base.Preconditions.checkState(Preconditions.java:199)
-	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:121)
-	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:116)
-	at org.openqa.selenium.chrome.ChromeDriverService.access$000(ChromeDriverService.java:32)
-	at org.openqa.selenium.chrome.ChromeDriverService$Builder.findDefaultExecutable(ChromeDriverService.java:137)
-	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:296)
-	at org.openqa.selenium.chrome.ChromeDriverService.createDefaultService(ChromeDriverService.java:88)
-	at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:120)
-	at com.edge.GFS.online.TestGFSOnline.beforeTest(TestGFSOnline.java:46)
+Tests run: 19, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 412.794 sec <<< FAILURE!
+Strebs_GFS(com.edge.GFS.online.TestGFSOnline)  Time elapsed: 1.238 sec  <<< FAILURE!
+junit.framework.ComparisonFailure: expected:<....gfs.com/experience/[main/portal.html]> but was:<....gfs.com/experience/[portal/j_security_check]>
+	at junit.framework.Assert.assertEquals(Assert.java:85)
+	at junit.framework.Assert.assertEquals(Assert.java:91)
+	at com.edge.GFS.online.CommonGFS.StepsToExport(CommonGFS.java:159)
+	at com.edge.GFS.online.TestGFSOnline.Strebs_GFS(TestGFSOnline.java:277)
 
