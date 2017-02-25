@@ -153,7 +153,10 @@ public class CommonGFS {
 	}
 
 	public void StepsToExport(WebDriver driver) throws InterruptedException {
-
+		
+		// check if Alert is present
+		isAlertPresent(driver);
+		
 		String Current_URL = driver.getCurrentUrl();
 		// Verify if login is sucess
 		Assert.assertEquals("https://apps.gfs.com/experience/main/portal.html", Current_URL);
@@ -195,7 +198,10 @@ public class CommonGFS {
 
 
 	public void StepsToExportBottega(WebDriver driver) throws InterruptedException {
-
+		
+		// Check if ALert is present
+		isAlertPresent(driver);
+		
 		String Current_URL = driver.getCurrentUrl();
 		// Verify if login is sucess
 		Assert.assertEquals("https://apps.gfs.com/experience/main/portal.html", Current_URL);

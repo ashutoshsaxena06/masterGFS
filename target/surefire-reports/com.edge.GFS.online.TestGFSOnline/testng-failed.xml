@@ -9,6 +9,7 @@
           <include name="beforeTest"/>
           <include name="setup"/>
           <include name="pretearDown"/>
+          <include name="TownKitchen_GFS"/>
           <include name="Strebs_GFS"/>
         </methods>
       </class> <!-- com.edge.GFS.online.TestGFSOnline -->
