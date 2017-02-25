@@ -197,7 +197,7 @@ public class CommonGFS {
 	}
 
 
-	public void StepsToExportBottega(WebDriver driver) throws InterruptedException {
+	/*public void StepsToExportBottega(WebDriver driver) throws InterruptedException {
 		
 		// Check if ALert is present
 		isAlertPresent(driver);
@@ -239,7 +239,74 @@ public class CommonGFS {
 		driver.findElement(By.xpath("//a[contains(.,'Print/Export List')]")).click();
 		DialogWinExportOG(driver);
 
+	}*/
+	
+	public void StepsToExportAcSelect(WebDriver driver, String AcName) throws InterruptedException {
+
+		String Current_URL = driver.getCurrentUrl();
+		// Verify if login is sucess
+		Assert.assertEquals("https://apps.gfs.com/experience/main/portal.html", Current_URL);
+		System.out.println("GFS - Home Page");
+
+		// Wait for Online Ordering link visiblitys
+		wait = new WebDriverWait(driver, 30);
+		WebElement lnk_OnlineOrdering = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(.,'Online Ordering')]")));
+
+		// Online ordering link assertion
+		Assert.assertEquals(true, lnk_OnlineOrdering.isDisplayed());
+
+		lnk_OnlineOrdering.click();
+		
+		// check for Al
+		isAlertPresent(driver);
+		
+		//Check for account page & select account
+				checkAccountPage(driver, Current_URL);
+
+	/*	
+		Assert.assertEquals("https://apps.gfs.com/doc/desktop/index.html#/account",driver.getCurrentUrl());
+		
+		driver.findElement(By.xpath("//div[contains(text(),'100020166')]")).click();
+*/
+		// Click Order guide option
+		wait = new WebDriverWait(driver, 50);
+		WebElement lnk_OrderGuide = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(.,'Order Guide')]/*")));
+		lnk_OrderGuide.click();
+
+		// driver.findElement(By.xpath("//a[contains(.,'Order
+		// Guide')]/*")).click();
+
+		WebElement btn_downArrowOrderGuideSelection = wait.until(ExpectedConditions
+				.visibilityOfElementLocated(By.xpath(".//*[@id='productList']/div/a[@class='actionsButton']")));
+		btn_downArrowOrderGuideSelection.click();
+
+		driver.findElement(By.xpath("//a[contains(.,'Print/Export List')]")).click();
+		DialogWinExportOG(driver);
+
 	}
+	private void checkAccountPage(WebDriver driver, String AccountName) {
+		// TODO Auto-generated method stub
+		String AccountPageUrl = "https://apps.gfs.com/doc/desktop/index.html#/account";
+		if (AccountPageUrl.equalsIgnoreCase(driver.getCurrentUrl())) {
+			
+			selectAccount(driver,AccountName);
+			System.out.println("Account name selected :-" +AccountName);
+			
+		} else {
+			
+			System.out.println("No account selection page appeared.");
+		}
+	}
+
+	private void selectAccount(WebDriver driver, String AccountName) {
+		// TODO Auto-generated method stub
+		System.out.println("The account name appear on system is -"+driver.findElement(By.xpath("")).getText());
+		driver.findElement(By.xpath("//div[contains(text(),'"+ AccountName +"')]")).click();
+		System.out.println(AccountName+ " is selected");
+	}
+
 	public void PreImportOrderStepsGFS(WebDriver driver) {
 		driver.findElement(By.xpath("//a[contains(.,'Online Ordering')]")).click();
 		System.out.println("Online ordering clicked");

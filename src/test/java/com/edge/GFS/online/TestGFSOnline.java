@@ -193,7 +193,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "townkitchen", "kitchen1"));
 		// check the flow to export
-		StepsToExport(driver);
+		StepsToExportAcSelect(driver, "TOWN KITCHEN");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -260,7 +260,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "rprieto", "100020166"));
 		// check the flow to export
-		StepsToExportBottega(driver);
+		StepsToExportAcSelect(driver, "BOTTEGA EXPRESS");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -309,6 +309,76 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 	
+	
+	@Test(priority = 20)
+	public void Agliolio_GFS() throws InterruptedException {
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "agliolio", "4flowers"));
+		// check the flow to export
+		StepsToExport(driver);
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Agliolio Italian Bistro & Bar");
+
+	}
+	
+	@Test(priority = 21)
+	public void AgliolioWellington_GFS() throws InterruptedException {
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "agliolio", "4flowers"));
+		// check the flow to export
+		StepsToExport(driver);
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Agliolio Wellington");
+
+	}
+	
+	@Test(priority = 22)
+	public void ChefDavid_GFS() throws InterruptedException {
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "dschwadron", "dschwadron1"));
+		// check the flow to export
+		StepsToExport(driver);
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Chef David Cuisine");
+
+	}
+	
+	@Test(priority = 23)
+	public void Jaguar_GFS() throws InterruptedException {
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "jaguar001", "Jaguar002"));
+		// check the flow to export
+		StepsToExport(driver);
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Jaguar");
+
+	}
+	
+	@Test(priority = 24)
+	public void HouseTK_GFS() throws InterruptedException {
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "townkitchen", "kitchen1"));
+		// check the flow to export
+		StepsToExport(driver);
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "House T&K");
+
+	}
 
 }
 /*
