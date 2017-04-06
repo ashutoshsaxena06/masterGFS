@@ -18,11 +18,11 @@ public class Constant {
 	
 	public static final  String saveDirectoryOG= "";
 	
-	public static final  String sendMailTo= "esavecustomerservice@gmail.com";
+	public static final  String sendMailTo= "deonlinemacro@gmail.com";
 
 	public static final  String sendMailFrom= "onlineweekend.diningedge@gmail.com";
 	
 	public static final  String DownloadFolder= "C:\\Downloads\\";
-
+ 
 	
 }

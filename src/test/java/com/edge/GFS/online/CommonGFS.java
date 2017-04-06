@@ -119,11 +119,10 @@ public class CommonGFS {
 
 		try {
 
-			driver.manage().window().maximize();
+			//driver.manage().window().maximize();
 
 			driver.get("https://apps.gfs.com/experience/");
 			// Wait For Page To Load
-			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 			// pass login credentials
 			driver.findElement(By.xpath("//*[@id='j_username']")).sendKeys(usernameGFS);
@@ -242,7 +241,12 @@ public class CommonGFS {
 	}*/
 	
 	public void StepsToExportAcSelect(WebDriver driver, String AcName) throws InterruptedException {
-
+		
+		isAlertPresent(driver);
+		//Check select account 1 
+		//checkAccountPage(driver, AcName);
+		System.out.println("The account name is : "+AcName);
+		
 		String Current_URL = driver.getCurrentUrl();
 		// Verify if login is sucess
 		Assert.assertEquals("https://apps.gfs.com/experience/main/portal.html", Current_URL);
@@ -258,11 +262,12 @@ public class CommonGFS {
 
 		lnk_OnlineOrdering.click();
 		
-		// check for Al
+		// check for Alert
 		isAlertPresent(driver);
 		
 		//Check for account page & select account
-				checkAccountPage(driver, Current_URL);
+		Thread.sleep(5000);
+		checkAccountPage(driver, AcName);
 
 	/*	
 		Assert.assertEquals("https://apps.gfs.com/doc/desktop/index.html#/account",driver.getCurrentUrl());
@@ -270,6 +275,7 @@ public class CommonGFS {
 		driver.findElement(By.xpath("//div[contains(text(),'100020166')]")).click();
 */
 		// Click Order guide option
+		Thread.sleep(2000);
 		wait = new WebDriverWait(driver, 50);
 		WebElement lnk_OrderGuide = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(.,'Order Guide')]/*")));
@@ -286,13 +292,15 @@ public class CommonGFS {
 		DialogWinExportOG(driver);
 
 	}
-	private void checkAccountPage(WebDriver driver, String AccountName) {
+	
+
+	private void checkAccountPage(WebDriver driver, String AcName) {
 		// TODO Auto-generated method stub
 		String AccountPageUrl = "https://apps.gfs.com/doc/desktop/index.html#/account";
 		if (AccountPageUrl.equalsIgnoreCase(driver.getCurrentUrl())) {
 			
-			selectAccount(driver,AccountName);
-			System.out.println("Account name selected :-" +AccountName);
+			selectAccount(driver,AcName);
+			System.out.println("Account name selected :-" +AcName);
 			
 		} else {
 			
@@ -300,11 +308,11 @@ public class CommonGFS {
 		}
 	}
 
-	private void selectAccount(WebDriver driver, String AccountName) {
+	private void selectAccount(WebDriver driver, String AcName) {
 		// TODO Auto-generated method stub
-		System.out.println("The account name appear on system is -"+driver.findElement(By.xpath("")).getText());
-		driver.findElement(By.xpath("//div[contains(text(),'"+ AccountName +"')]")).click();
-		System.out.println(AccountName+ " is selected");
+		//System.out.println("The account name appear on system is -"+driver.findElement(By.xpath("")).getText());
+		driver.findElement(By.xpath("//div[contains(text(),'"+ AcName +"')]")).click();
+		System.out.println(AcName+ " is selected");
 	}
 
 	public void PreImportOrderStepsGFS(WebDriver driver) {
