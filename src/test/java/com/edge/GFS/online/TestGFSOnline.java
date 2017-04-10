@@ -204,21 +204,21 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 
-	@Test(priority = 11)
-	public void BigPink_GFS() throws InterruptedException {
-
-		System.out.println("11 , BigPink_GFS ");
-
-		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "bigpink", "123456"));
-		// check the flow to export
-		StepsToExport(driver);
-		// rename downloadeds
-		// String CurrentPath = RandomAction.setdownloadDir();
-		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Big Pink");
-
-	}
+//	@Test(priority = 11)
+//	public void BigPink_GFS() throws InterruptedException {
+//
+//		System.out.println("11 , BigPink_GFS ");
+//
+//		// check if login is success
+//		Assert.assertTrue(LoginGFS(driver, "bigpink", "123456"));
+//		// check the flow to export
+//		StepsToExport(driver);
+//		// rename downloadeds
+//		// String CurrentPath = RandomAction.setdownloadDir();
+//		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Big Pink");
+//
+//	}
 
 	@Test(priority = 12)
 	public void Hamiltons_GFS() throws InterruptedException {
