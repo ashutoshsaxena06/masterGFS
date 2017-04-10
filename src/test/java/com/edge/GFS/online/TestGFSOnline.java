@@ -58,6 +58,7 @@ public class TestGFSOnline extends CommonGFS {
 		Assert.assertTrue(LoginGFS(driver, "jlay11", "pizza123"));
 		// check the flow to export
 		StepsToExport(driver);
+		
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);

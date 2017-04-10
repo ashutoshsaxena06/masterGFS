@@ -192,6 +192,8 @@ public class CommonGFS {
 
 		driver.findElement(By.xpath("//a[contains(.,'Print/Export List')]")).click();
 		DialogWinExportOG(driver);
+		
+		Thread.sleep(3000);
 
 	}
 
@@ -290,6 +292,8 @@ public class CommonGFS {
 
 		driver.findElement(By.xpath("//a[contains(.,'Print/Export List')]")).click();
 		DialogWinExportOG(driver);
+		
+		Thread.sleep(3000);
 
 	}
 	
