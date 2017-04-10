@@ -1,8 +1,6 @@
 
 package com.edge.GFS.online;
 
-import java.util.concurrent.TimeUnit;
-
 import javax.mail.MessagingException;
 
 import org.junit.Assert;
@@ -15,7 +13,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import com.util.framework.BrowserAction;
 import com.util.framework.SendMailSSL;
 
 public class TestGFSOnline extends CommonGFS {
@@ -268,20 +265,20 @@ public class TestGFSOnline extends CommonGFS {
 		SendMailSSL.sendMailAction("Gordon - Hybrid", "Woodfield Country Club");
 	}
 
-	@Test(priority = 15)
-	public void Strebs_GFS() throws InterruptedException {
-
-		System.out.println("15 , Strebs_GFS ");
-
-		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "richw0", "235610"));
-		// check the flow to export
-		StepsToExport(driver);
-		// rename downloadeds
-		// String CurrentPath = RandomAction.setdownloadDir();
-		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Strebs Restaurant");
-	}
+//	@Test(priority = 15)
+//	public void Strebs_GFS() throws InterruptedException {
+//
+//		System.out.println("15 , Strebs_GFS ");
+//
+//		// check if login is success
+//		Assert.assertTrue(LoginGFS(driver, "richw0", "235610"));
+//		// check the flow to export
+//		StepsToExport(driver);
+//		// rename downloadeds
+//		// String CurrentPath = RandomAction.setdownloadDir();
+//		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Strebs Restaurant");
+//	}
 
 	@Test(priority = 16)
 	public void Prime112_GFS() throws InterruptedException {
