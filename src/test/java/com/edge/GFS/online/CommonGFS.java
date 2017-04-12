@@ -12,13 +12,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.util.framework.ErrRemedy;
 import junit.framework.Assert;
 
 public class CommonGFS {
 
-	private WebDriver driver;
-	private WebDriverWait wait;
+	public WebDriver driver;
+	public WebDriverWait wait;
 
 	public void LogOutGFSAccount(WebDriver driver) {
 
@@ -70,7 +69,6 @@ public class CommonGFS {
 			//	driver.findElement(By.xpath("//div[@class='dialogWindow smaller'][contains(.,'OK')]")).click();
 				
 /*				if (ExportStatus.equalsIgnoreCase("Export Failed")) {
-
 					System.out.println("Order Guide Export failed");
 					ErrRemedy.ErrScreenshotCapture(driver);
 					ErrRemedy.ErrReportingMail();
@@ -119,7 +117,7 @@ public class CommonGFS {
 
 		try {
 
-			//driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 			driver.get("https://apps.gfs.com/experience/");
 			// Wait For Page To Load
@@ -153,6 +151,8 @@ public class CommonGFS {
 
 	public void StepsToExport(WebDriver driver) throws InterruptedException {
 		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+
 		// check if Alert is present
 		isAlertPresent(driver);
 		
@@ -207,15 +207,12 @@ public class CommonGFS {
 		// Verify if login is sucess
 		Assert.assertEquals("https://apps.gfs.com/experience/main/portal.html", Current_URL);
 		System.out.println("GFS - Home Page");
-
 		// Wait for Online Ordering link visiblity
 		wait = new WebDriverWait(driver, 30);
 		WebElement lnk_OnlineOrdering = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(.,'Online Ordering')]")));
-
 		// Online ordering link assertion
 		Assert.assertEquals(true, lnk_OnlineOrdering.isDisplayed());
-
 		lnk_OnlineOrdering.click();
 		
 		isAlertPresent(driver);
@@ -223,26 +220,23 @@ public class CommonGFS {
 		Assert.assertEquals("https://apps.gfs.com/doc/desktop/index.html#/account",driver.getCurrentUrl());
 		
 		driver.findElement(By.xpath("//div[contains(text(),'100020166')]")).click();
-
 		// Click Order guide option
 		wait = new WebDriverWait(driver, 50);
 		WebElement lnk_OrderGuide = wait
 				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(.,'Order Guide')]/*")));
 		lnk_OrderGuide.click();
-
 		// driver.findElement(By.xpath("//a[contains(.,'Order
 		// Guide')]/*")).click();
-
 		WebElement btn_downArrowOrderGuideSelection = wait.until(ExpectedConditions
 				.visibilityOfElementLocated(By.xpath(".//*[@id='productList']/div/a[@class='actionsButton']")));
 		btn_downArrowOrderGuideSelection.click();
-
 		driver.findElement(By.xpath("//a[contains(.,'Print/Export List')]")).click();
 		DialogWinExportOG(driver);
-
 	}*/
 	
 	public void StepsToExportAcSelect(WebDriver driver, String AcName) throws InterruptedException {
+		
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
 		isAlertPresent(driver);
 		//Check select account 1 
@@ -299,7 +293,7 @@ public class CommonGFS {
 	
 
 	private void checkAccountPage(WebDriver driver, String AcName) {
-		// TODO Auto-generated method stub
+		
 		String AccountPageUrl = "https://apps.gfs.com/doc/desktop/index.html#/account";
 		if (AccountPageUrl.equalsIgnoreCase(driver.getCurrentUrl())) {
 			
