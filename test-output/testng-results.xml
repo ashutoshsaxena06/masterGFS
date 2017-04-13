@@ -1,32 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32090" started-at="2017-01-29T20:52:51Z" finished-at="2017-01-29T20:53:23Z">
+  <suite name="Default suite" duration-ms="210327" started-at="2017-04-12T10:09:37Z" finished-at="2017-04-12T10:13:07Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32090" started-at="2017-01-29T20:52:51Z" finished-at="2017-01-29T20:53:23Z">
+    <test name="Default test" duration-ms="210327" started-at="2017-04-12T10:09:37Z" finished-at="2017-04-12T10:13:07Z">
       <class name="com.edge.GFS.online.TestGFSOnline">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="beforeTest" is-config="true" duration-ms="6516" started-at="2017-01-30T02:22:51Z" finished-at="2017-01-30T02:22:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="setup" is-config="true" duration-ms="1" started-at="2017-01-30T02:22:57Z" finished-at="2017-01-30T02:22:57Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="setup" is-config="true" duration-ms="5" started-at="2017-04-12T15:39:37Z" finished-at="2017-04-12T15:39:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Espositos_GFS()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="Espositos_GFS" duration-ms="24734" started-at="2017-01-30T02:22:57Z" finished-at="2017-01-30T02:23:22Z">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="beforeTest" is-config="true" duration-ms="1385" started-at="2017-04-12T15:39:37Z" finished-at="2017-04-12T15:39:38Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Espositos_GFS -->
-        <test-method status="PASS" signature="AfterClass()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="AfterClass" is-config="true" duration-ms="0" started-at="2017-01-30T02:23:22Z" finished-at="2017-01-30T02:23:22Z">
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="Agliolio_GFS()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="Agliolio_GFS" duration-ms="40560" started-at="2017-04-12T15:39:38Z" finished-at="2017-04-12T15:40:19Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AfterClass -->
-        <test-method status="PASS" signature="pretearDown()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@4883b407]" name="pretearDown" is-config="true" duration-ms="815" started-at="2017-01-30T02:23:22Z" finished-at="2017-01-30T02:23:23Z">
+        </test-method> <!-- Agliolio_GFS -->
+        <test-method status="PASS" signature="pretearDown()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="pretearDown" is-config="true" duration-ms="960" started-at="2017-04-12T15:40:19Z" finished-at="2017-04-12T15:40:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- pretearDown -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="beforeTest" is-config="true" duration-ms="1142" started-at="2017-04-12T15:40:20Z" finished-at="2017-04-12T15:40:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="AgliolioWellington_GFS()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="AgliolioWellington_GFS" duration-ms="37247" started-at="2017-04-12T15:40:21Z" finished-at="2017-04-12T15:40:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AgliolioWellington_GFS -->
+        <test-method status="PASS" signature="pretearDown()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="pretearDown" is-config="true" duration-ms="754" started-at="2017-04-12T15:40:58Z" finished-at="2017-04-12T15:40:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pretearDown -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="beforeTest" is-config="true" duration-ms="1161" started-at="2017-04-12T15:40:59Z" finished-at="2017-04-12T15:41:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="TownKitchen_GFS()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="TownKitchen_GFS" duration-ms="43717" started-at="2017-04-12T15:41:00Z" finished-at="2017-04-12T15:41:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TownKitchen_GFS -->
+        <test-method status="PASS" signature="pretearDown()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="pretearDown" is-config="true" duration-ms="755" started-at="2017-04-12T15:41:44Z" finished-at="2017-04-12T15:41:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pretearDown -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="beforeTest" is-config="true" duration-ms="891" started-at="2017-04-12T15:41:45Z" finished-at="2017-04-12T15:41:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="HouseTK_GFS()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="HouseTK_GFS" duration-ms="38767" started-at="2017-04-12T15:41:45Z" finished-at="2017-04-12T15:42:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HouseTK_GFS -->
+        <test-method status="PASS" signature="pretearDown()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="pretearDown" is-config="true" duration-ms="751" started-at="2017-04-12T15:42:24Z" finished-at="2017-04-12T15:42:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pretearDown -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="beforeTest" is-config="true" duration-ms="1154" started-at="2017-04-12T15:42:25Z" finished-at="2017-04-12T15:42:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="Bottega_GFS()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="Bottega_GFS" duration-ms="40285" started-at="2017-04-12T15:42:26Z" finished-at="2017-04-12T15:43:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Bottega_GFS -->
+        <test-method status="PASS" signature="pretearDown()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="pretearDown" is-config="true" duration-ms="769" started-at="2017-04-12T15:43:06Z" finished-at="2017-04-12T15:43:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- pretearDown -->
+        <test-method status="PASS" signature="AfterClass()[pri:0, instance:com.edge.GFS.online.TestGFSOnline@6a41eaa2]" name="AfterClass" is-config="true" duration-ms="0" started-at="2017-04-12T15:43:07Z" finished-at="2017-04-12T15:43:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterClass -->
       </class> <!-- com.edge.GFS.online.TestGFSOnline -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

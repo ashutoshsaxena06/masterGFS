@@ -5,11 +5,15 @@
     <classes>
       <class name="com.edge.GFS.online.TestGFSOnline">
         <methods>
+          <include name="Bottega_GFS"/>
+          <include name="HouseTK_GFS"/>
           <include name="AfterClass"/>
+          <include name="Agliolio_GFS"/>
           <include name="beforeTest"/>
           <include name="setup"/>
+          <include name="AgliolioWellington_GFS"/>
           <include name="pretearDown"/>
-          <include name="Espositos_GFS"/>
+          <include name="TownKitchen_GFS"/>
         </methods>
       </class> <!-- com.edge.GFS.online.TestGFSOnline -->
     </classes>
