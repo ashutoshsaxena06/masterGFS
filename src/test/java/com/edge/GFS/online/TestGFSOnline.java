@@ -11,6 +11,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import com.util.framework.RandomAction;
 import com.util.framework.SendMailSSL;
 
 public class TestGFSOnline extends CommonGFS {
@@ -30,6 +31,7 @@ public class TestGFSOnline extends CommonGFS {
 	@BeforeMethod
 	public void beforeTest() throws InterruptedException {
 		System.out.println("***********StartTest*********");
+		RandomAction.deleteFiles("C:\\Users\\Edge\\Downloads");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("start-maximized");
 		System.setProperty("webdriver.chrome.driver",
