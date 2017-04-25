@@ -62,8 +62,11 @@ public class CommonGFS {
 	public void CheckExportOGStatus(WebDriver driver) {
 
 		try {
-			if (wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[@class='dialogWindow smaller']")))).isDisplayed()) {
-				String ExportStatus = driver.findElement(By.xpath("//div[@class='dialogWindow smaller']/*/*/*/*/*")).getText();
+			if (wait.until(ExpectedConditions
+					.visibilityOf(driver.findElement(By.xpath("//div[@class='dialogWindow smaller']"))))
+					.isDisplayed()) {
+				String ExportStatus = driver.findElement(By.xpath("//div[@class='dialogWindow smaller']/*/*/*/*/*"))
+						.getText();
 
 				System.out.println(ExportStatus);
 
