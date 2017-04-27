@@ -109,20 +109,20 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 
-	@Test(priority = 5)
-	public void SportsGrillSunset_GFS() throws InterruptedException {
-
-		System.out.println("5 , SportsGrillSunset_GFS ");
-
-		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "Sgsunset", "sports1"));
-		// check the flow to export
-		StepsToExport(driver);
-		// rename downloadeds
-		// String CurrentPath = RandomAction.setdownloadDir();
-		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Sunset");
-	}
+//	@Test(priority = 5)
+//	public void SportsGrillSunset_GFS() throws InterruptedException {
+//
+//		System.out.println("5 , SportsGrillSunset_GFS ");
+//
+//		// check if login is success
+//		Assert.assertTrue(LoginGFS(driver, "Sgsunset", "sports1"));
+//		// check the flow to export
+//		StepsToExport(driver);
+//		// rename downloadeds
+//		// String CurrentPath = RandomAction.setdownloadDir();
+//		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Sunset");
+//	}
 
 	@Test(priority = 6)
 	public void SportsGrillKendall_GFS() throws InterruptedException {
@@ -137,54 +137,57 @@ public class TestGFSOnline extends CommonGFS {
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Kendall");
-
-	}
-
-	@Test(priority = 7)
-	public void SportsGrillPembroke_GFS() throws InterruptedException {
-
-		System.out.println("7 , SportsGrillPembroke_GFS ");
-
-		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "sgpembroke", "sports1"));
-		// check the flow to export
-		StepsToExport(driver);
-		// rename downloadeds
-		// String CurrentPath = RandomAction.setdownloadDir();
-		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Pembroke Pines");
-	}
-
-	@Test(priority = 8)
-	public void SportsGrillPalmetto_GFS() throws InterruptedException {
-
-		System.out.println("8 , SportsGrillPalmetto_GFS ");
-
-		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "sgpalmetto", "sports1"));
-		// check the flow to export
-		StepsToExport(driver);
-		// rename downloadeds
-		// String CurrentPath = RandomAction.setdownloadDir();
-		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Palmetto");
-
-	}
-
-	@Test(priority = 9)
-	public void SportsGrillSouthMiami_GFS() throws InterruptedException {
-
-		System.out.println("9 , SportsGrillSouthMiami_GFS ");
-
-		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "sgsouthmiami", "sports1"));
-		// check the flow to export
-		StepsToExport(driver);
-		// rename downloadeds
-		// String CurrentPath = RandomAction.setdownloadDir();
-		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill South Miami");
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Sunset");
 	}
+
+//	@Test(priority = 7)
+//	public void SportsGrillPembroke_GFS() throws InterruptedException {
+//
+//		System.out.println("7 , SportsGrillPembroke_GFS ");
+//
+//		// check if login is success
+//		Assert.assertTrue(LoginGFS(driver, "sgpembroke", "sports1"));
+//		// check the flow to export
+//		StepsToExport(driver);
+//		// rename downloadeds
+//		// String CurrentPath = RandomAction.setdownloadDir();
+//		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Pembroke Pines");
+//	}
+//
+//	@Test(priority = 8)
+//	public void SportsGrillPalmetto_GFS() throws InterruptedException {
+//
+//		System.out.println("8 , SportsGrillPalmetto_GFS ");
+//
+//		// check if login is success
+//		Assert.assertTrue(LoginGFS(driver, "sgpalmetto", "sports1"));
+//		// check the flow to export
+//		StepsToExport(driver);
+//		// rename downloadeds
+//		// String CurrentPath = RandomAction.setdownloadDir();
+//		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Palmetto");
+//
+//	}
+//
+//	@Test(priority = 9)
+//	public void SportsGrillSouthMiami_GFS() throws InterruptedException {
+//
+//		System.out.println("9 , SportsGrillSouthMiami_GFS ");
+//
+//		// check if login is success
+//		Assert.assertTrue(LoginGFS(driver, "sgsouthmiami", "sports1"));
+//		// check the flow to export
+//		StepsToExport(driver);
+//		// rename downloadeds
+//		// String CurrentPath = RandomAction.setdownloadDir();
+//		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill South Miami");
+//	}
 
 	@Test(priority = 10)
 	public void Talavera_GFS() throws InterruptedException {
