@@ -348,20 +348,20 @@ public class TestGFSOnline extends CommonGFS {
 
 	// #select AC Test cases
 
-	@Test(priority = 20)
-	public void Agliolio_GFS() throws InterruptedException {
-
-		System.out.println("18, Agliolio_GFS ");
-		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "agliolio", "4flowers"));
-		// check the flow to export
-		StepsToExportAcSelect(driver, "AGLIOLIO-BOYNTON BEACH");
-		// rename downloadeds
-		// String CurrentPath = RandomAction.setdownloadDir();
-		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Agliolio Boynton Italian Bistro & Bar");
-
-	}
+//	@Test(priority = 20)
+//	public void Agliolio_GFS() throws InterruptedException {
+//
+//		System.out.println("18, Agliolio_GFS ");
+//		// check if login is success
+//		Assert.assertTrue(LoginGFS(driver, "agliolio", "4flowers"));
+//		// check the flow to export
+//		StepsToExportAcSelect(driver, "AGLIOLIO-BOYNTON BEACH");
+//		// rename downloadeds
+//		// String CurrentPath = RandomAction.setdownloadDir();
+//		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Agliolio Boynton Italian Bistro & Bar");
+//
+//	}
 
 /*	@Test(priority = 21)
 	public void AgliolioWellington_GFS() throws InterruptedException {
