@@ -46,7 +46,7 @@ public class TestGFSOnline extends CommonGFS {
 
 		}
 	}
-
+/*
 	@Test(priority = 1)
 	public void Espositos_GFS() throws InterruptedException, MessagingException {
 
@@ -363,7 +363,7 @@ public class TestGFSOnline extends CommonGFS {
 //
 //	}
 
-/*	@Test(priority = 21)
+	@Test(priority = 21)
 	public void AgliolioWellington_GFS() throws InterruptedException {
 
 		System.out.println("19, AgliolioWellington_GFS ");
@@ -377,7 +377,7 @@ public class TestGFSOnline extends CommonGFS {
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Agliolio Wellington Fresh Pasta & Wine");
 
-	}*/
+	}
 
 	@Test(priority = 22)
 	public void TownKitchen_GFS() throws InterruptedException {
@@ -443,7 +443,7 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 	
-	
+	*/
 	
 	@Test(priority = 26)
 	public void BocaRaton_GFS() throws InterruptedException {
@@ -453,7 +453,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "dawnwight", "Flashback1"));
 		// check the flow to export
-		StepsToExportAcSelect(driver, "Flashback Diner - Boca Raton");
+		StepsToExportAcSelect(driver, "FLASHBACK DINER - BOCA RATON");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
