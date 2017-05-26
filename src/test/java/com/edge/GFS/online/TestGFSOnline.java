@@ -46,7 +46,7 @@ public class TestGFSOnline extends CommonGFS {
 
 		}
 	}
-/*
+
 	@Test(priority = 1)
 	public void Espositos_GFS() throws InterruptedException, MessagingException {
 
@@ -443,7 +443,7 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 	
-	*/
+	
 	
 	@Test(priority = 26)
 	public void BocaRaton_GFS() throws InterruptedException {
