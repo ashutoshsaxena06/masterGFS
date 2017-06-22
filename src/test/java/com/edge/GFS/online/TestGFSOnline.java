@@ -477,18 +477,18 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 	
-	// @Test(priority = 24)
-	// public void Bottega_GFS() throws InterruptedException {
-	// System.out.println("24, Bottega_GFS ");
-	// // check if login is success
-	// Assert.assertTrue(LoginGFS(driver, "rprieto", "100020166"));
-	// // check the flow to export
-	// StepsToExportAcSelect(driver, "BOTTEGA EXPRESS");
-	// // rename downloadeds
-	// // String CurrentPath = RandomAction.setdownloadDir();
-	// // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-	// SendMailSSL.sendMailAction("Gordon Food Service", "Bottega Express");
-	//
-	// }
+	 @Test(priority = 24)
+	 public void Bottega_GFS() throws InterruptedException {
+	 System.out.println("24, Bottega_GFS ");
+	 // check if login is success
+	 Assert.assertTrue(LoginGFS(driver, "rprieto", "100020166"));
+	 // check the flow to export
+	 StepsToExportAcSelect(driver, "BOTTEGA EXPRESS");
+	 // rename downloadeds
+	 // String CurrentPath = RandomAction.setdownloadDir();
+	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+	 SendMailSSL.sendMailAction("Gordon Food Service", "Bottega Express");
+	
+	 }
 
 }
