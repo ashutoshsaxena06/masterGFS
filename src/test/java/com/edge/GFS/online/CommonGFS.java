@@ -236,7 +236,7 @@ public class CommonGFS {
 	 * DialogWinExportOG(driver); }
 	 */
 
-	public void StepsToExportAcSelect(WebDriver driver, String AcName) throws InterruptedException {
+	public void StepsToExport(WebDriver driver, String AcName) throws InterruptedException {
 
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 

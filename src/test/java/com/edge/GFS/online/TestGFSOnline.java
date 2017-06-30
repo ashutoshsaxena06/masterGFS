@@ -355,7 +355,7 @@ public class TestGFSOnline extends CommonGFS {
 //		// check if login is success
 //		Assert.assertTrue(LoginGFS(driver, "agliolio", "4flowers"));
 //		// check the flow to export
-//		StepsToExportAcSelect(driver, "AGLIOLIO-BOYNTON BEACH");
+//		StepsToExport(driver, "AGLIOLIO-BOYNTON BEACH");
 //		// rename downloadeds
 //		// String CurrentPath = RandomAction.setdownloadDir();
 //		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -371,7 +371,7 @@ public class TestGFSOnline extends CommonGFS {
 //		// check if login is success
 //		Assert.assertTrue(LoginGFS(driver, "agliolio", "4flowers"));
 //		// check the flow to export
-//		StepsToExportAcSelect(driver, "AGLIOLIO-WELLINGTON");
+//		StepsToExport(driver, "AGLIOLIO-WELLINGTON");
 //		// rename downloadeds
 //		// String CurrentPath = RandomAction.setdownloadDir();
 //		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -387,7 +387,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "townkitchen", "kitchen1"));
 		// check the flow to export
-		StepsToExportAcSelect(driver, "TOWN KITCHEN");
+		StepsToExport(driver, "TOWN KITCHEN");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -402,7 +402,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "townkitchen", "kitchen1"));
 		// check the flow to export
-		StepsToExportAcSelect(driver, "HOUSE KITCHEN & BAR");
+		StepsToExport(driver, "HOUSE KITCHEN & BAR");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -419,7 +419,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "dawnwight", "Flashback1"));
 		// check the flow to export
-		StepsToExportAcSelect(driver, "FLASHBACK DINER");
+		StepsToExport(driver, "FLASHBACK DINER");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -435,7 +435,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "dawnwight", "Flashback1"));
 		// check the flow to export
-		StepsToExportAcSelect(driver, "FLASHBACK DINER & COFFEE HOUSE");
+		StepsToExport(driver, "FLASHBACK DINER & COFFEE HOUSE");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -453,7 +453,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "dawnwight", "Flashback1"));
 		// check the flow to export
-		StepsToExportAcSelect(driver, "FLASHBACK DINER - BOCA RATON");
+		StepsToExport(driver, "FLASHBACK DINER - BOCA RATON");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -483,7 +483,7 @@ public class TestGFSOnline extends CommonGFS {
 	 // check if login is success
 	 Assert.assertTrue(LoginGFS(driver, "rprieto", "100020166"));
 	 // check the flow to export
-	 StepsToExportAcSelect(driver, "BOTTEGA EXPRESS");
+	 StepsToExport(driver, "BOTTEGA EXPRESS");
 	 // rename downloadeds
 	 // String CurrentPath = RandomAction.setdownloadDir();
 	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -491,4 +491,17 @@ public class TestGFSOnline extends CommonGFS {
 	
 	 }
 
+	 @Test(priority = 25)
+	 public void Wycliffe_GFS() throws InterruptedException {
+	 System.out.println("24, Bottega_GFS ");
+	 // check if login is success
+	 Assert.assertTrue(LoginGFS(driver, "davidperez2", "Wycliffe1"));
+	 // check the flow to export
+	 StepsToExport(driver);
+	 // rename downloadeds
+	 // String CurrentPath = RandomAction.setdownloadDir();
+	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+	 SendMailSSL.sendMailAction("GFS - Offline GP", "Wycliffe Golf & Country Club");
+	
+	 }
 }
