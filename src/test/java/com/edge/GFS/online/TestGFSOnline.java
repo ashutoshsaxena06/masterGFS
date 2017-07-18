@@ -205,26 +205,55 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 
-	// @Test(priority = 11)
-	// public void BigPink_GFS() throws InterruptedException {
-	//
-	// System.out.println("11 , BigPink_GFS ");
-	//
-	// // check if login is success
-	// Assert.assertTrue(LoginGFS(driver, "bigpink", "123456"));
-	// // check the flow to export
-	// StepsToExport(driver);
-	// // rename downloadeds
-	// // String CurrentPath = RandomAction.setdownloadDir();
-	// // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-	// SendMailSSL.sendMailAction("GFS - Offline GP", "Big Pink");
-	//
-	// }
+	 @Test(priority = 11)
+	 public void BigPink_GFS() throws InterruptedException {
+	
+	 System.out.println("11 , BigPink_GFS ");
+	
+	 // check if login is success
+	 Assert.assertTrue(LoginGFS(driver, "bigpink", "123456"));
+	 // check the flow to export
+	 StepsToExport(driver);
+	 // rename downloadeds
+	 // String CurrentPath = RandomAction.setdownloadDir();
+	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+	 SendMailSSL.sendMailAction("GFS - Offline GP", "Big Pink");
+	 }
 
-	@Test(priority = 12)
+	 @Test(priority = 12)
+	 public void PrimeItalian_GFS() throws InterruptedException {
+	
+	 System.out.println("12 , PrimeItalian_GFS ");
+	
+	 // check if login is success
+	 Assert.assertTrue(LoginGFS(driver, "prime1121", "123456"));
+	 // check the flow to export
+	 StepsToExport(driver);
+	 // rename downloadeds
+	 // String CurrentPath = RandomAction.setdownloadDir();
+	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+	 SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Italian");
+	 }
+	 
+	 @Test(priority = 13)
+	 public void PrimeFish_GFS() throws InterruptedException {
+	
+	 System.out.println("13 , PrimeFish_GFS ");
+	
+	 // check if login is success
+	 Assert.assertTrue(LoginGFS(driver, "primefish", "123456"));
+	 // check the flow to export
+	 StepsToExport(driver);
+	 // rename downloadeds
+	 // String CurrentPath = RandomAction.setdownloadDir();
+	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+	 SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Fish");
+	 }
+	 
+	@Test(priority = 14)
 	public void Hamiltons_GFS() throws InterruptedException {
 
-		System.out.println("12 , Hamiltons_GFS ");
+		System.out.println("14 , Hamiltons_GFS ");
 
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "ghamilton", "Leevia@"));
@@ -236,10 +265,10 @@ public class TestGFSOnline extends CommonGFS {
 		SendMailSSL.sendMailAction("Gordon - Hybrid", "Hamiltons Catering");
 	}
 
-	@Test(priority = 13)
+	@Test(priority = 15)
 	public void ConchRep_GFS() throws InterruptedException {
 
-		System.out.println("13 , ConchRep_GFS ");
+		System.out.println("15 , ConchRep_GFS ");
 
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "nbrummette", "pantera13"));
@@ -252,10 +281,10 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 
-	@Test(priority = 14)
+	@Test(priority = 16)
 	public void Woodfield_GFS() throws InterruptedException {
 
-		System.out.println("14 , Woodfield_GFS ");
+		System.out.println("16 , Woodfield_GFS ");
 
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "mcdonald", "3650club"));
@@ -282,13 +311,13 @@ public class TestGFSOnline extends CommonGFS {
 	// SendMailSSL.sendMailAction("GFS - Offline GP", "Strebs Restaurant");
 	// }
 
-	@Test(priority = 16)
+	@Test(priority = 17)
 	public void Prime112_GFS() throws InterruptedException {
 
-		System.out.println("16 , Prime112_GFS ");
+		System.out.println("17 , Prime112_GFS ");
 
 		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "bigpink", "123456"));
+		Assert.assertTrue(LoginGFS(driver, "prime112", "123456"));
 		// check the flow to export
 		StepsToExport(driver);
 		// rename downloads
@@ -298,10 +327,10 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 
-	@Test(priority = 17)
+	@Test(priority = 18)
 	public void TrumpIntl_GFS() throws InterruptedException {
 
-		System.out.println("17 , TrumpIntl_GFS ");
+		System.out.println("18 , TrumpIntl_GFS ");
 
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "rvigo", "Aux123456"));
@@ -314,10 +343,10 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 
-	@Test(priority = 18)
+	@Test(priority = 19)
 	public void ChefDavid_GFS() throws InterruptedException {
 
-		System.out.println("20, ChefDavid_GFS ");
+		System.out.println("19, ChefDavid_GFS ");
 
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "dschwadron", "dschwadron1"));
@@ -330,10 +359,10 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 
-	@Test(priority = 19)
+	@Test(priority = 20)
 	public void Jaguar_GFS() throws InterruptedException {
 
-		System.out.println("21, Jaguar_GFS ");
+		System.out.println("20, Jaguar_GFS ");
 
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "jaguar001", "Jaguar002"));
@@ -477,9 +506,9 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 	
-	 @Test(priority = 24)
+	 @Test(priority = 28)
 	 public void Bottega_GFS() throws InterruptedException {
-	 System.out.println("24, Bottega_GFS ");
+	 System.out.println("28, Bottega_GFS ");
 	 // check if login is success
 	 Assert.assertTrue(LoginGFS(driver, "rprieto", "100020166"));
 	 // check the flow to export
@@ -491,9 +520,9 @@ public class TestGFSOnline extends CommonGFS {
 	
 	 }
 
-	 @Test(priority = 25)
+	 @Test(priority = 29)
 	 public void Wycliffe_GFS() throws InterruptedException {
-	 System.out.println("24, Bottega_GFS ");
+	 System.out.println("29, Bottega_GFS ");
 	 // check if login is success
 	 Assert.assertTrue(LoginGFS(driver, "davidperez2", "Wycliffe1"));
 	 // check the flow to export
