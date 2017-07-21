@@ -205,50 +205,6 @@ public class TestGFSOnline extends CommonGFS {
 
 	}
 
-	 @Test(priority = 11)
-	 public void BigPink_GFS() throws InterruptedException {
-	
-	 System.out.println("11 , BigPink_GFS ");
-	
-	 // check if login is success
-	 Assert.assertTrue(LoginGFS(driver, "bigpink", "123456"));
-	 // check the flow to export
-	 StepsToExport(driver);
-	 // rename downloadeds
-	 // String CurrentPath = RandomAction.setdownloadDir();
-	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-	 SendMailSSL.sendMailAction("GFS - Offline GP", "Big Pink");
-	 }
-
-	 @Test(priority = 12)
-	 public void PrimeItalian_GFS() throws InterruptedException {
-	
-	 System.out.println("12 , PrimeItalian_GFS ");
-	
-	 // check if login is success
-	 Assert.assertTrue(LoginGFS(driver, "prime1121", "123456"));
-	 // check the flow to export
-	 StepsToExport(driver);
-	 // rename downloadeds
-	 // String CurrentPath = RandomAction.setdownloadDir();
-	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-	 SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Italian");
-	 }
-	 
-	 @Test(priority = 13)
-	 public void PrimeFish_GFS() throws InterruptedException {
-	
-	 System.out.println("13 , PrimeFish_GFS ");
-	
-	 // check if login is success
-	 Assert.assertTrue(LoginGFS(driver, "primefish", "123456"));
-	 // check the flow to export
-	 StepsToExport(driver);
-	 // rename downloadeds
-	 // String CurrentPath = RandomAction.setdownloadDir();
-	 // File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-	 SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Fish");
-	 }
 	 
 	@Test(priority = 14)
 	public void Hamiltons_GFS() throws InterruptedException {
@@ -314,16 +270,19 @@ public class TestGFSOnline extends CommonGFS {
 	@Test(priority = 17)
 	public void Prime112_GFS() throws InterruptedException {
 
-		System.out.println("17 , Prime112_GFS ");
+		System.out.println("17 , Prime112_GFS and Big Pink All Restaurants ");
 
 		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "prime112", "123456"));
+		Assert.assertTrue(LoginGFS(driver, "bigpink", "123456"));
 		// check the flow to export
 		StepsToExport(driver);
 		// rename downloads
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Prime 112");
+		 SendMailSSL.sendMailAction("GFS - Offline GP", "Big Pink");
+		 SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Fish");
+		 SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Italian");
 
 	}
 
