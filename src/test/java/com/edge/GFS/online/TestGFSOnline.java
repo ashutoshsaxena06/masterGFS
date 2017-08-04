@@ -457,7 +457,7 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "SDCook", "OBHills123"));
 		// check the flow to export 
-		StepsToExport(driver, "100115373");
+		StepsToExport(driver, "ORANGE BLOSSOM");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -492,4 +492,21 @@ public class TestGFSOnline extends CommonGFS {
 	 SendMailSSL.sendMailAction("GFS - Offline GP", "Wycliffe Golf & Country Club");
 	
 	 }
+	 
+		@Test(priority = 30)
+		public void EVANS_GFS() throws InterruptedException {
+
+			System.out.println("30, EVANS_GFS ");
+
+			// check if login is success
+			Assert.assertTrue(LoginGFS(driver, "SDCook", "OBHills123"));
+			// check the flow to export 
+			StepsToExport(driver, "EVANS PRAIRIE");
+			// rename downloadeds
+			// String CurrentPath = RandomAction.setdownloadDir();
+			// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+			SendMailSSL.sendMailAction("GFS - Offline GP", "Evans Prairie CC");
+
+		}
+		
 }
