@@ -282,8 +282,8 @@ public class TestGFSOnline extends CommonGFS {
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Prime 112");
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Big Pink");
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Fish");
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Italian");
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Fish");
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Prime Italian");
 
 	}
 
