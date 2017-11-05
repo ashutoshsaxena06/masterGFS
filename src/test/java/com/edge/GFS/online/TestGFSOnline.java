@@ -63,20 +63,21 @@ public class TestGFSOnline extends CommonGFS {
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Espositos Pizza");
 	}
 
-	@Test(priority = 2)
-	public void Liguoris_GFS() throws InterruptedException {
-
-		System.out.println("2, Liguoris_GFS ");
-
-		Assert.assertTrue(LoginGFS(driver, "jlay11", "pizza123"));
-		// check the flow to export
-		StepsToExport(driver);
-		// rename downloadeds
-		// String CurrentPath = RandomAction.setdownloadDir();
-		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-		// -- send big pink files to Liguoris
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Liguori's Fired Up");
-	}
+// removed as per Dawn on 15-10-2017
+//	@Test(priority = 2)
+//	public void Liguoris_GFS() throws InterruptedException {
+//
+//		System.out.println("2, Liguoris_GFS ");
+//
+//		Assert.assertTrue(LoginGFS(driver, "jlay11", "pizza123"));
+//		// check the flow to export
+//		StepsToExport(driver);
+//		// rename downloadeds
+//		// String CurrentPath = RandomAction.setdownloadDir();
+//		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+//		// -- send big pink files to Liguoris
+//		SendMailSSL.sendMailAction("GFS - Offline GP", "Liguori's Fired Up");
+//	}
 
 	@Test(priority = 3)
 	public void Gilberts_GFS() throws InterruptedException {
@@ -136,11 +137,9 @@ public class TestGFSOnline extends CommonGFS {
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Kendall");
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Pembroke Pines");
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Palmetto");
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill South Miami");
-		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Sunset");
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill");
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Sports Grill Corporate");
+
 	}
 
 	// @Test(priority = 7)
@@ -199,13 +198,14 @@ public class TestGFSOnline extends CommonGFS {
 		// check if login is success
 		Assert.assertTrue(LoginGFS(driver, "talavera001", "talavera002"));
 		// check the flow to export
-		StepsToExport(driver);
+		StepsToExport(driver,"TALAVERA & COCINA MEXICANA");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Talavera Restaurant");
 
 	}
+	
 
 	@Test(priority = 14)
 	public void Hamiltons_GFS() throws InterruptedException {
@@ -325,9 +325,9 @@ public class TestGFSOnline extends CommonGFS {
 		System.out.println("20, Jaguar_GFS ");
 
 		// check if login is success
-		Assert.assertTrue(LoginGFS(driver, "jaguar001", "Jaguar002"));
+		Assert.assertTrue(LoginGFS(driver, "talavera001", "talavera002"));
 		// check the flow to export
-		StepsToExport(driver);
+		StepsToExport(driver,"JAGUAR RESTAURANT");
 		// rename downloadeds
 		// String CurrentPath = RandomAction.setdownloadDir();
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
@@ -508,5 +508,85 @@ public class TestGFSOnline extends CommonGFS {
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Evans Prairie CC");
 
 	}
+	
+	@Test(priority = 31)
+	public void WyandhamCafeMed_GFS() throws InterruptedException {
 
+		System.out.println("31, WyandhamCafeMed_GFS ");
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "lillot123", "Cafemed123"));
+		// check the flow to export
+		StepsToExport(driver);
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Wyndham Deerfield - Cafe Med");
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Wyndham Deerfield - Burger Craze");
+	}
+	
+	@Test(priority = 32)
+	public void WyndhamPatioBar_GFS() throws InterruptedException {
+
+		System.out.println("32, WyndhamPatioBar_GFS ");
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "chefbob1", "patiobar123"));
+		// check the flow to export
+		StepsToExport(driver);
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Wyndham Deerfield - Patio Bar & Catering");
+	}
+	
+	@Test(priority = 33)
+	public void HoleInWall_GFS() throws InterruptedException {
+
+		System.out.println("33, HoleInWall_GFS ");
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "cerickson", "Hole2010"));
+		// check the flow to export
+		StepsToExport(driver, "KINGS CREEK HOLE IN THE WALL");
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Hole in the Wall");
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Hole in the Wall-Coffee window");
+	}
+	
+	@Test(priority = 34)
+	public void Nicks_GFS() throws InterruptedException {
+
+		System.out.println("33, HoleInWall_GFS ");
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "justins1", "Diningedge2015"));
+		// check the flow to export
+		StepsToExport(driver);
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Nicks New Haven Style Pizza");
+	}
+	
+	@Test(priority = 35)
+	public void Peacock_GFS() throws InterruptedException {
+
+		System.out.println("35, Peacock_GFS ");
+
+		// check if login is success
+		Assert.assertTrue(LoginGFS(driver, "talavera001", "talavera002"));
+		// check the flow to export
+		StepsToExport(driver,"PEACOCK GARDEN BISTRO");
+		// rename downloadeds
+		// String CurrentPath = RandomAction.setdownloadDir();
+		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
+		SendMailSSL.sendMailAction("GFS - Offline GP", "Peacock Garden Cafe");
+	}
 }
+
+
+
+

@@ -241,9 +241,7 @@ public class CommonGFS {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		isAlertPresent(driver);
-		// Check select account 1
-		// checkAccountPage(driver, AcName);
-		System.out.println("The account name is : " + AcName);
+
 
 		String Current_URL = driver.getCurrentUrl();
 		// Verify if login is sucess
@@ -263,6 +261,10 @@ public class CommonGFS {
 		// check for Alert
 		isAlertPresent(driver);
 
+		// Check select account 1
+		// checkAccountPage(driver, AcName);
+		System.out.println("The account name is : " + AcName);
+		
 		// Check for account page & select account
 		Thread.sleep(5000);
 		checkAccountPage(driver, AcName);
