@@ -94,7 +94,7 @@ public class TestGFSExecutor extends CommonGFS {
 	@BeforeMethod
 	public static void setUp() throws IOException {
 		// to get the browser on which the UI test has to be performed.
-		System.out.println("***********StartTest*********");
+		logger.info("***********StartTest*********");
 		RandomAction.deleteFiles("C:\\Users\\Edge\\Downloads");
 		driver = PageAction.openBrowser("Chrome", path);
 		logger.info("Invoked browser .. ");
@@ -147,7 +147,7 @@ public class TestGFSExecutor extends CommonGFS {
 		XSSFCell cell1, cell2;
 		TestGFSExecutor.rowIndex = Math.floorMod(TestGFSExecutor.acno, TestGFSExecutor.totalNoOfRows) + 1;
 
-		System.out.println("Test Case test #" + TestGFSExecutor.rowIndex);
+		logger.info("Test Case test #" + TestGFSExecutor.rowIndex);
 		cell1 = TestGFSExecutor.exportworkbook.getSheet(project).getRow(TestGFSExecutor.rowIndex)
 				.createCell(TestGFSExecutor.AcColStatus);
 		cell1.setCellValue("");

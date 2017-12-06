@@ -2,6 +2,7 @@ package com.edge.GFS.online;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.NoAlertPresentException;
@@ -18,6 +19,9 @@ public class CommonGFS {
 
 	public static WebDriver driver;
 	public static WebDriverWait wait;
+	
+	private final static Logger logger = Logger.getLogger(CommonGFS.class);
+
 
 	public void LogOutGFSAccount(WebDriver driver) {
 
@@ -30,13 +34,13 @@ public class CommonGFS {
 					.visibilityOf(driver.findElement(By.xpath("//div/a[@class='confirm blue button ng-binding']"))));
 			lnk_Confirm_logout.click();
 		} catch (WebDriverException se) {
-			System.out.println("Logout failed");
+			logger.info("Logout failed");
 			se.printStackTrace();
 		} catch (RuntimeException re) {
 			// TODO: handle exception
-			System.out.println("logout Failed");
+			logger.info("logout Failed");
 		} catch (Exception e2) {
-			System.out.println("logout failed");
+			logger.info("logout failed");
 			e2.printStackTrace();
 		}
 	}
@@ -44,16 +48,16 @@ public class CommonGFS {
 	public boolean isAlertPresent(WebDriver driver) {
 		try {
 			driver.findElement(By.xpath("//button[@class='button gfsexperience-modal-close']")).click();
-			System.out.println("Alert handled");
+			logger.info("Alert handled");
 			return true;
 		} catch (NoAlertPresentException Ex) {
-			System.out.println("No alert found");
+			logger.info("No alert found");
 			return false;
 		} catch (NoSuchElementException e) {
-			System.out.println("No alert found");
+			logger.info("No alert found");
 			return false;
 		} catch (WebDriverException e) {
-			System.out.println("No alert found");
+			logger.info("No alert found");
 			return false;
 		}
 
@@ -68,29 +72,29 @@ public class CommonGFS {
 				String ExportStatus = driver.findElement(By.xpath("//div[@class='dialogWindow smaller']/*/*/*/*/*"))
 						.getText();
 
-				System.out.println(ExportStatus);
+				logger.info(ExportStatus);
 
 				// driver.findElement(By.xpath("//div[@class='dialogWindow
 				// smaller'][contains(.,'OK')]")).click();
 
 				/*
 				 * if (ExportStatus.equalsIgnoreCase("Export Failed")) {
-				 * System.out.println("Order Guide Export failed");
+				 * logger.info("Order Guide Export failed");
 				 * ErrRemedy.ErrScreenshotCapture(driver);
 				 * ErrRemedy.ErrReportingMail(); }
 				 */
 			}
 		} catch (InvalidSelectorException ine) {
-			System.out.println("Export dialog window not found invalid selector");
+			logger.info("Export dialog window not found invalid selector");
 			// LogOutGFSAccount(driver);
 			ine.printStackTrace();
 		} catch (NoSuchElementException ne) {
-			System.out.println("Export dailog window not found");
+			logger.info("Export dailog window not found");
 			// LogOutGFSAccount(driver);
 			ne.printStackTrace();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			System.out.println("No Export pop up");
+			logger.info("No Export pop up");
 			// LogOutGFSAccount(driver);
 			e.printStackTrace();
 
@@ -102,7 +106,7 @@ public class CommonGFS {
 
 		if (driver.findElement(By.className("dialogWindow")).isDisplayed()) {
 
-			System.out.println("Export list window is displayed.");
+			logger.info("Export list window is displayed.");
 
 			driver.findElement(By.xpath("//span[contains(.,'Price')]")).click();
 
@@ -112,7 +116,7 @@ public class CommonGFS {
 		}
 
 		else {
-			System.out.println("Select data columns dialog window is not popped up");
+			logger.info("Select data columns dialog window is not popped up");
 		}
 	}
 
@@ -128,7 +132,7 @@ public class CommonGFS {
 			driver.findElement(By.xpath("//*[@id='j_password']")).sendKeys(passwordGFS);
 
 			driver.findElement(By.xpath("//*[@id='submit']")).click();
-			System.out.println("Login Successful");
+			logger.info("Login Successful");
 			
 			return true;
 		
@@ -142,7 +146,7 @@ public class CommonGFS {
 		String Current_URL = driver.getCurrentUrl();
 		// Verify if login is sucess
 		Assert.assertEquals("https://apps.gfs.com/experience/main/portal.html", Current_URL);
-		System.out.println("GFS - Home Page");
+		logger.info("GFS - Home Page");
 
 		// Wait for Online Ordering link visiblity
 		wait = new WebDriverWait(driver, 30);
@@ -189,7 +193,7 @@ public class CommonGFS {
 	 * 
 	 * String Current_URL = driver.getCurrentUrl(); // Verify if login is sucess
 	 * Assert.assertEquals("https://apps.gfs.com/experience/main/portal.html",
-	 * Current_URL); System.out.println("GFS - Home Page"); // Wait for Online
+	 * Current_URL); logger.info("GFS - Home Page"); // Wait for Online
 	 * Ordering link visiblity wait = new WebDriverWait(driver, 30); WebElement
 	 * lnk_OnlineOrdering = wait
 	 * .until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
@@ -224,7 +228,7 @@ public class CommonGFS {
 		String Current_URL = driver.getCurrentUrl();
 		// Verify if login is sucess
 		Assert.assertEquals("https://apps.gfs.com/experience/main/portal.html", Current_URL);
-		System.out.println("GFS - Home Page");
+		logger.info("GFS - Home Page");
 
 		// Wait for Online Ordering link visiblitys
 		wait = new WebDriverWait(driver, 30);
@@ -241,7 +245,7 @@ public class CommonGFS {
 
 		// Check select account 1
 		// checkAccountPage(driver, AcName);
-		System.out.println("The account name is : " + AcName);
+		logger.info("The account name is : " + AcName);
 		
 		// Check for account page & select account
 		Thread.sleep(5000);
@@ -283,29 +287,29 @@ public class CommonGFS {
 		if (AccountPageUrl.equalsIgnoreCase(driver.getCurrentUrl())) {
 
 			selectAccount(driver, AcName);
-			System.out.println("Account name selected :-" + AcName);
+			logger.info("Account name selected :-" + AcName);
 
 		} else {
 
-			System.out.println("No account selection page appeared.");
+			logger.info("No account selection page appeared.");
 		}
 	}
 
 	private void selectAccount(WebDriver driver, String AcName) {
 		// TODO Auto-generated method stub
-		// System.out.println("The account name appear on system is
+		// logger.info("The account name appear on system is
 		// -"+driver.findElement(By.xpath("")).getText());
 		driver.findElement(By.xpath("//span[contains(text(),'" + AcName + "')]")).click();
-		System.out.println(AcName + " is selected");
+		logger.info(AcName + " is selected");
 	}
 
 	public void PreImportOrderStepsGFS(WebDriver driver) {
 		driver.findElement(By.xpath("//a[contains(.,'Online Ordering')]")).click();
-		System.out.println("Online ordering clicked");
+		logger.info("Online ordering clicked");
 
 		// check if alert is present
 		isAlertPresent(driver);
-		System.out.println("Alert found status :- " + isAlertPresent(driver));
+		logger.info("Alert found status :- " + isAlertPresent(driver));
 
 		// clicking on 10 key link
 		driver.findElement(By.xpath("//a/div[contains(.,'10 key/import')]")).click();
