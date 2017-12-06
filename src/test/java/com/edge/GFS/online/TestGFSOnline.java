@@ -1,21 +1,7 @@
 package com.edge.GFS.online;
 
-import javax.mail.MessagingException;
-
-import org.junit.Assert;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import com.util.framework.RandomAction;
-import com.util.framework.SendMailSSL;
-
 public class TestGFSOnline extends CommonGFS {
-
+/*
 	@BeforeClass
 	public void setup() {
 		System.out.println("*************GFS************");
@@ -585,7 +571,9 @@ public class TestGFSOnline extends CommonGFS {
 		// File GFS_OG = RandomAction.getLatestFilefromDir(CurrentPath);
 		SendMailSSL.sendMailAction("GFS - Offline GP", "Peacock Garden Cafe");
 	}
+	*/
 }
+
 
 
 
