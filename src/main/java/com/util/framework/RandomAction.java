@@ -78,7 +78,7 @@ public class RandomAction {
 				
 		  File getLatestFilefromDir = null;
 		    File dir = new File(dirPath);
-		    FileFilter fileFilter = new WildcardFileFilter("*." + "csv");
+		    FileFilter fileFilter = new WildcardFileFilter("*." + "xlsx");
 		    File[] files = dir.listFiles(fileFilter);
 
 		    if (files.length > 0) {
