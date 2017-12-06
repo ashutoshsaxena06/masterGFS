@@ -139,7 +139,7 @@ public class TestGFSExecutor extends CommonGFS {
 			String restaurant_name,
 			String username, 
 			String password, 
-			String listname, 
+			String accountname, 
 			String exportstatus, 
 			String detailedstatus) {
 		Boolean result;
@@ -172,8 +172,8 @@ public class TestGFSExecutor extends CommonGFS {
 				// if list is not empty
 				logger.info(restaurant_name + " for purveryor " + purveyor + " is Active !!");
 				Assert.assertEquals(true, LoginGFS(driver, username.trim(), password.trim()));
-				if (listname != null && listname.length() == 0) {
-					result = StepsToExport(driver, listname);
+				if (accountname != null && !accountname.isEmpty()) {
+					result = StepsToExport(driver, accountname);
 				} else { // default OG
 					result = StepsToExport(driver);
 				}
