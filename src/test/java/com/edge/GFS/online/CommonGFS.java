@@ -16,8 +16,8 @@ import junit.framework.Assert;
 
 public class CommonGFS {
 
-	public WebDriver driver;
-	public WebDriverWait wait;
+	public static WebDriver driver;
+	public static WebDriverWait wait;
 
 	public void LogOutGFSAccount(WebDriver driver) {
 
@@ -118,8 +118,6 @@ public class CommonGFS {
 
 	public boolean LoginGFS(WebDriver driver, String usernameGFS, String passwordGFS) {
 
-		try {
-
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 			driver.get("https://apps.gfs.com/experience/");
@@ -131,30 +129,12 @@ public class CommonGFS {
 
 			driver.findElement(By.xpath("//*[@id='submit']")).click();
 			System.out.println("Login Successful");
-
+			
 			return true;
-
-		}
-
-		catch (NoSuchElementException Ne) {
-			// TODO: handle exception
-			System.out.println("No such element \n" + Ne.getMessage());
-			return false;
-		}
-
-		catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Program failed.\n" + e.getMessage());
-			e.printStackTrace();
-
-			return false;
-		}
-
+		
 	}
 
-	public void StepsToExport(WebDriver driver) throws InterruptedException {
-
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	public Boolean StepsToExport(WebDriver driver) throws InterruptedException {
 
 		// check if Alert is present
 		isAlertPresent(driver);
@@ -197,6 +177,7 @@ public class CommonGFS {
 		DialogWinExportOG(driver);
 
 		Thread.sleep(3000);
+		return true;
 
 	}
 
@@ -236,12 +217,9 @@ public class CommonGFS {
 	 * DialogWinExportOG(driver); }
 	 */
 
-	public void StepsToExport(WebDriver driver, String AcName) throws InterruptedException {
-
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	public Boolean StepsToExport(WebDriver driver, String AcName) throws InterruptedException {
 
 		isAlertPresent(driver);
-
 
 		String Current_URL = driver.getCurrentUrl();
 		// Verify if login is sucess
@@ -295,6 +273,7 @@ public class CommonGFS {
 		DialogWinExportOG(driver);
 
 		Thread.sleep(3000);
+		return true;
 
 	}
 
