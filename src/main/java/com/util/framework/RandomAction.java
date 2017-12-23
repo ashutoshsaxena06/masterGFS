@@ -36,7 +36,8 @@ public class RandomAction {
 	 */
 	// enter email id where you need to send email
 	public static String getDate() {
-		DateFormat df = new SimpleDateFormat("ddMMyyyy");
+		DateFormat df = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
+
 		Calendar calobj = Calendar.getInstance();
 		System.out.println(df.format(calobj.getTime()));
 		String CurrentDate = df.format(calobj.getTime());
