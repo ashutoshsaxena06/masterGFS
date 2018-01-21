@@ -188,7 +188,7 @@ public class TestGFSExecutor extends CommonGFS {
 					detailedstatus = "OG export Failed";
 				}
 				Thread.sleep(8000);
-				SendMailSSL.sendMailActionXlsx(purveyor.trim(), restaurant_name.trim());
+				SendMailSSL.sendMailActionCsvDE(purveyor.trim(), restaurant_name.trim());
 			} else {
 				logger.info(restaurant_name + " for purveryor " + purveyor + " is not Active !!");
 				exportstatus = "Not Active";
