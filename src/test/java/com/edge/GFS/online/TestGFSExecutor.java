@@ -20,10 +20,11 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.util.framework.CommonGFS;
 import com.util.framework.ExcelFunctions;
-import com.util.framework.PageAction;
 import com.util.framework.RandomAction;
 import com.util.framework.SendMailSSL;
+
 
 public class TestGFSExecutor extends CommonGFS {
 
@@ -48,7 +49,7 @@ public class TestGFSExecutor extends CommonGFS {
 	public static String folderDate;
 	public static String currList = "";
 	public static String emailMessageExport = "";
-	public static String path = "C:\\Users\\Edge\\Downloads\\chromedriver_win32\\chromedriver.exe";
+	public static String path = System.getProperty("user.home")+"\\Downloads\\chromedriver_win32\\chromedriver.exe";
 	public static String project = "GFS";
 
 	private final static Logger logger = Logger.getLogger(TestGFSExecutor.class);
@@ -95,8 +96,8 @@ public class TestGFSExecutor extends CommonGFS {
 	public static void setUp() throws IOException {
 		// to get the browser on which the UI test has to be performed.
 		logger.info("***********StartTest*********");
-		RandomAction.deleteFiles("C:\\Users\\Edge\\Downloads");
-		driver = PageAction.openBrowser("Chrome", path);
+		RandomAction.deleteFiles(System.getProperty("user.home")+"\\Downloads");
+		driver = RandomAction.openBrowser("Chrome", path);
 		logger.info("Invoked browser .. ");
 	}
 
@@ -187,7 +188,7 @@ public class TestGFSExecutor extends CommonGFS {
 					detailedstatus = "OG export Failed";
 				}
 				Thread.sleep(8000);
-				SendMailSSL.sendMailAction(purveyor.trim(), restaurant_name.trim());
+				SendMailSSL.sendMailActionXlsx(purveyor.trim(), restaurant_name.trim());
 			} else {
 				logger.info(restaurant_name + " for purveryor " + purveyor + " is not Active !!");
 				exportstatus = "Not Active";
@@ -213,7 +214,6 @@ public class TestGFSExecutor extends CommonGFS {
 	public static void sendMail() {
 		try {
 			String emailMsg = "Daily " + project + " OG Export Status: " + RandomAction.getDate();
-			
 			SendMailSSL.sendReport(emailMsg, reportFile);
 			logger.info("Email Sent with Attachment");
 		} catch (Exception e) {
