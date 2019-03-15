@@ -25,19 +25,22 @@ import com.util.framework.ExcelFunctions;
 import com.util.framework.RandomAction;
 import com.util.framework.SendMailSSL;
 
-
 public class TestGFSExecutor extends CommonGFS {
 
 	static final int maxtry = 3;
 	static int retry = 0;
 	public static int rowIndex;
 	public static String projectPath = System.getProperty("user.dir");
-	public static String inputFile = System.getProperty("user.home")+"\\Desktop\\ExportEngineInput.xlsx";
+	public static String inputFile = System.getProperty("user.home") + "\\Desktop\\ExportEngineInput.xlsx";
 	// projectPath + "\\config\\ExportEngineInput.xlsx";
 	public static SimpleDateFormat sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
-	public static String reportFile = System.getProperty("user.home")+"\\Desktop\\Reports\\GFS_OG_report\\ExportSummary_Cheney_"+ new Date().toString().replace(":", "").replace(" ", "") + ".xlsx";
-			// for Edge - "C:\\Users\\Edge\\Desktop\\Reports\\CheneyOG_report\\ExportSummary_Cheney_" + PageAction.getDate().toString().replace(" ", "_");
-//			+ new Date().toString().replace(":", "").replace(" ", "") + ".xlsx";
+	public static String reportFile = System.getProperty("user.home")
+			+ "\\Desktop\\Reports\\GFS_OG_report\\ExportSummary_Cheney_"
+			+ new Date().toString().replace(":", "").replace(" ", "") + ".xlsx";
+	// for Edge -
+	// "C:\\Users\\Edge\\Desktop\\Reports\\CheneyOG_report\\ExportSummary_Cheney_" +
+	// PageAction.getDate().toString().replace(" ", "_");
+	// + new Date().toString().replace(":", "").replace(" ", "") + ".xlsx";
 	// projectPath+ "\\Output_Summary\\ExportSummary_Cheney_" + new
 	// Date().toString().replace(":", "").replace(" ", "")+".xlsx";
 	public static int acno;
@@ -49,7 +52,7 @@ public class TestGFSExecutor extends CommonGFS {
 	public static String folderDate;
 	public static String currList = "";
 	public static String emailMessageExport = "";
-	public static String path = System.getProperty("user.home")+"\\Downloads\\chromedriver_win32\\chromedriver.exe";
+	public static String path = System.getProperty("user.home") + "\\Downloads\\chromedriver_win32\\chromedriver.exe";
 	public static String project = "GFS";
 
 	private final static Logger logger = Logger.getLogger(TestGFSExecutor.class);
@@ -96,7 +99,7 @@ public class TestGFSExecutor extends CommonGFS {
 	public static void setUp() throws IOException {
 		// to get the browser on which the UI test has to be performed.
 		logger.info("***********StartTest*********");
-		RandomAction.deleteFiles(System.getProperty("user.home")+"\\Downloads");
+		// RandomAction.deleteFiles(System.getProperty("user.home")+"\\Downloads");
 		driver = RandomAction.openBrowser("Chrome", path);
 		logger.info("Invoked browser .. ");
 	}
@@ -133,16 +136,8 @@ public class TestGFSExecutor extends CommonGFS {
 	}
 
 	@Test(dataProvider = "testData")
-	public void Export_Mail_OG(
-			String active, 
-			String accountID, 
-			String purveyor, 
-			String restaurant_name,
-			String username, 
-			String password, 
-			String accountname, 
-			String exportstatus, 
-			String detailedstatus) {
+	public void Export_Mail_OG(String active, String accountID, String purveyor, String restaurant_name,
+			String username, String password, String accountname, String exportstatus, String detailedstatus) {
 		Boolean result;
 		logger.info("Inside OG Export : Started exporting OG for different accounts");
 		XSSFCell cell1, cell2;
@@ -167,28 +162,34 @@ public class TestGFSExecutor extends CommonGFS {
 		// }
 		exportstatus = cell1.getStringCellValue();
 		detailedstatus = cell2.getStringCellValue();
-
+		boolean loginFlag = false;
 		try {
 			if (active.equalsIgnoreCase("Yes")) {
 				// if list is not empty
 				logger.info(restaurant_name + " for purveryor " + purveyor + " is Active !!");
-				Assert.assertEquals(true, LoginGFS(driver, username.trim(), password.trim()));
-				if (accountname != null && !accountname.isEmpty()) {
-					result = StepsToExport(driver, accountname);
-				} else { // default OG
-					result = StepsToExport(driver);
+				loginFlag = LoginGFS(driver, username.trim(), password.trim());
+				if (loginFlag == true) {
+					if (accountname != null && !accountname.isEmpty()) {
+						result = StepsToExport(driver, accountname);
+					} else { // default OG
+						result = StepsToExport(driver);
+					}
+					if (result.equals(true)) {
+						emailMessageExport = "Pass";
+						exportstatus = "Pass";
+						detailedstatus = "OG exported succesfully";
+					} else {
+						emailMessageExport = "Failed";
+						exportstatus = "Failed";
+						detailedstatus = "OG export Failed";
+					}
+					Thread.sleep(8000);
+					SendMailSSL.sendMailActionCsvDE(purveyor.trim(), restaurant_name.trim());
+				}else {
+					logger.info("Login failed - "+ loginFlag);
+					throw new Exception();
 				}
-				if (result.equals(true)) {
-					emailMessageExport = "Pass";
-					exportstatus = "Pass";
-					detailedstatus = "OG exported succesfully";
-				} else {
-					emailMessageExport = "Failed";
-					exportstatus = "Failed";
-					detailedstatus = "OG export Failed";
-				}
-				Thread.sleep(8000);
-				SendMailSSL.sendMailActionCsvDE(purveyor.trim(), restaurant_name.trim());
+
 			} else {
 				logger.info(restaurant_name + " for purveryor " + purveyor + " is not Active !!");
 				exportstatus = "Not Active";
@@ -201,10 +202,15 @@ public class TestGFSExecutor extends CommonGFS {
 		} catch (Exception e) {
 			e.printStackTrace();
 			exportstatus = "Failed";
-			detailedstatus = "Some technical issue ocurred during export";
+			if (loginFlag == true) {
+				detailedstatus = "Invalid login credentials";
+			}else {
+				detailedstatus = "Some technical issue ocurred during export";
+			}
+			
 			cell1.setCellValue(exportstatus);
 			cell2.setCellValue(detailedstatus);
-			logger.info("Technical issue occured during export for restaurant - "+restaurant_name);
+			logger.info("Technical issue occured during export for restaurant - " + restaurant_name);
 		}
 		logger.info(emailMessageExport.trim());
 	}
