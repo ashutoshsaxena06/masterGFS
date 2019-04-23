@@ -118,7 +118,7 @@ public class TestGFSExecutor extends CommonGFS {
 	public static void setUp() throws IOException {
 		// to get the browser on which the UI test has to be performed.
 		logger.info("***********StartTest*********");
-//		RandomAction.deleteFiles(System.getProperty("user.home") + "\\Downloads");
+		RandomAction.deleteFiles(System.getProperty("user.home") + "\\Downloads");
 		driver = RandomAction.openBrowser("Chrome", path);
 		logger.info("Invoked browser .. ");
 	}
