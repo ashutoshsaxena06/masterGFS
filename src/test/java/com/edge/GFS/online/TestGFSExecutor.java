@@ -61,7 +61,7 @@ public class TestGFSExecutor extends CommonGFS {
 	public static String emailMessageExport = "";
 	public static String path = System.getProperty("user.home") + "\\Downloads\\chromedriver_win32\\chromedriver.exe";
 	public static String project = "GFS";
-	public static String extentReport = System.getProperty("user.dir") + File.separator + new File(System.getProperty("user.dir")+ "/extentsReport").mkdirs()
+	public static String extentReport = System.getProperty("user.dir") + File.separator + (new File(System.getProperty("user.dir")+ "/extentsReport").mkdirs() ? "/extentsReport" : "/extentsReport")
 			+ File.separator + "Report.html";
 	public static ExtentReports er;
 	public static ExtentTest et;
