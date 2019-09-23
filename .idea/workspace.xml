@@ -39,6 +39,31 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="TestGFSExecutor.Export_Mail_OG" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="gfsOnline" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.edge.GFS.online.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.edge.GFS.online" />
+      <option name="MAIN_CLASS_NAME" value="com.edge.GFS.online.TestGFSExecutor" />
+      <option name="METHOD_NAME" value="Export_Mail_OG" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.TestGFSExecutor.Export_Mail_OG" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -57,10 +82,23 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com.framework.commonUtils/CommonGFS.java</url>
+          <line>223</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

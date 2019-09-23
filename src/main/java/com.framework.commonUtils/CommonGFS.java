@@ -6,15 +6,18 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class CommonGFS {
 
     private final static Logger logger = Logger.getLogger(CommonGFS.class);
-    private static final String[] OG_Columns = {"Item Number", "Brand", "Description", "Inner Pack", "Pack", "Price"};
+    private static final List<String> OG_Columns = Arrays.asList("Item Number", "Brand", "Description", "Inner Pack", "Pack", "Price");
+    private static final List<String> non_OG_Columns = Arrays.asList("Last Order Date", "Group Headers");
     public static WebDriver driver;
     public static WebDriverWait wait;
-    public static String fileFormat="CSV";
+    public static String fileFormat = "CSV";
 
     public void LogOutGFSAccount(WebDriver driver) {
 
@@ -87,29 +90,51 @@ public class CommonGFS {
 
     }
 
-    public void selectFileType(String fileType) {
-        WebElement ele_FileType = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='" + fileType + "']/following-sibling::input")));
+    public void selectFileType() {
+        WebElement ele_FileType = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='CSV']/following-sibling::span[@class='radio']")));
         ele_FileType.click();
     }
 
     public void customExportWindow() {
-		selectFileType(fileFormat);
-		chooseFileColumns(OG_Columns);
-		clickDownload();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        selectFileType();
+        chooseFileColumns();
+        clickDownload();
     }
 
-	private void clickDownload() {
-		WebElement ele_FileType = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Download']")));
-		ele_FileType.click();
-	}
+    private void clickDownload() {
+        WebElement ele_FileType = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Download']")));
+        ele_FileType.click();
+    }
 
-	private void chooseFileColumns(String[] og_columns) {
-		for (String str: og_columns) {
-			WebElement col = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[text()='" + str + "']/following-sibling::input[@type='checkbox']")));
-			col.click();}
-	}
+    private void chooseFileColumns() {
 
-	@Deprecated
+        for (String s : non_OG_Columns) {
+            //uncheck not required
+            logger.info(driver.findElement(By.xpath("//*[text()='" + s + "']/following-sibling::input")).getAttribute("class").contains("ng-empty") ? s + "- unchecked" : s + "- unchecked element - " + CheckUncheckElement(s));
+        }
+        for (String s : OG_Columns) {
+            //check required
+            logger.info(driver.findElement(By.xpath("//*[text()='" + s + "']/following-sibling::input")).getAttribute("class").contains("ng-not-empty") ? s + "- checked" : s + "- checked element - " + CheckUncheckElement(s));
+        }
+    }
+
+    private boolean CheckUncheckElement(String s) {
+        boolean flag = false;
+        try {
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[text()='" + s + "']/following-sibling::span[@class='checkmark']"))).click();
+            flag = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return flag;
+    }
+
+    @Deprecated
     public void DialogWinExportOG(WebDriver driver) {
 
         if (driver.findElement(By.className("dialogWindow")).isDisplayed()) {
@@ -183,29 +208,32 @@ public class CommonGFS {
         isAlertPresent(driver);
 
         // check for Alert
-        isAlertPresent(driver);
+//        isAlertPresent(driver);
         // ORDER GUIDE PAGE
         driver.get("https://apps.gfs.com/doc/desktop/index.html#/account");
 
         // Check select account 1
         // checkAccountPage(driver, AcName);
-		if (AcName != null && !AcName.isEmpty()) {
-			logger.info("The account name is : " + AcName);
-		// Check for account page & select account
-			Thread.sleep(5000);
-			checkAccountPage(driver, AcName);
-		}
+        if (AcName != null && !AcName.isEmpty()) {
+            logger.info("The account name is : " + AcName);
+            // Check for account page & select account
+            Thread.sleep(5000);
+            checkAccountPage(driver, AcName);
+        }
         // Click Order guide option
         Thread.sleep(5000);
         OrderGuide(driver);
-		WebElement btn_downArrowOrderGuideSelection = wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath(".//*[@id='productList']/div/a[@class='actionsButton']")));
-		btn_downArrowOrderGuideSelection.click();
+        WebElement btn_downArrowOrderGuideSelection = wait.until(ExpectedConditions
+                .visibilityOfElementLocated(By.xpath(".//*[@id='productList']/div/a[@class='actionsButton']")));
+        btn_downArrowOrderGuideSelection.click();
 
-		driver.findElement(By.xpath("//a[contains(.,'Custom Export')]")).click();
-		customExportWindow();
-		Thread.sleep(3000);
-		return true;
+        WebElement btn_customExport = wait.until(ExpectedConditions
+                .visibilityOfElementLocated(By.linkText("Custom Export")));
+        btn_customExport.click();
+
+        customExportWindow();
+        Thread.sleep(3000);
+        return true;
     }
 
     private void OrderGuide(WebDriver driver) {

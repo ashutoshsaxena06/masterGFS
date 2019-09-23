@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.junit.Assert;
 import org.testng.annotations.*;
 
 import java.io.File;
@@ -68,7 +69,7 @@ public class TestGFSExecutor extends CommonGFS {
     public static void setUp() throws IOException {
         // to get the browser on which the UI test has to be performed.
         logger.info("***********StartTest*********");
-        RandomAction.deleteFiles(System.getProperty("user.home") + "\\Downloads");
+        RandomAction.deleteFiles(System.getProperty("user.home") + "\\Downloads",".csv");
         driver = RandomAction.openBrowser("Chrome", path);
         logger.info("Invoked browser .. ");
     }
@@ -121,6 +122,7 @@ public class TestGFSExecutor extends CommonGFS {
             SendMailSSL.sendReports(emailMsg, reportFile, extentReport);
             logger.info("Email Sent with Attachment");
         } catch (Exception e) {
+            logger.error("report sent failure!!!!");
             e.printStackTrace();
         }
     }
@@ -233,6 +235,7 @@ public class TestGFSExecutor extends CommonGFS {
             et.log(LogStatus.FAIL, exportstatus + " - " + detailedstatus);
         }
         logger.info(emailMessageExport.trim());
+        Assert.assertTrue(false);
     }
     ////////////////////////////////////////////////////
 
