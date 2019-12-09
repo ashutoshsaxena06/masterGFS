@@ -120,16 +120,18 @@ public class CommonGFS {
 
         for (WebElement we : unSelected) {
             logger.info("unselected column - " + we.getText());
-            columnsToSelect.add(we.getText());
+            if (OG_Columns.contains(we.getText())){
+                columnsToSelect.add(we.getText());
+            }
         }
         for ( String s : columnsToSelect ) {
             driver.findElement(By.xpath(unSelectedColumnAdd.replace("columnName", s))).click();
         }
 
-        List<WebElement> selectedColumns = driver.findElements(By.xpath("//div[contains(@class,'selectedColumns hasOverflow')]/descendant::span[@class='labels columnName ng-binding']"));
+  /*      List<WebElement> selectedColumns = driver.findElements(By.xpath("//div[contains(@class,'selectedColumns hasOverflow')]/descendant::span[@class='labels columnName ng-binding']"));
         for (WebElement we : unSelected) {
             logger.info("selected columns " + we.getText());
-        }
+        }*/
 
 //        for (String s : non_OG_Columns) {
 //            //uncheck not required
