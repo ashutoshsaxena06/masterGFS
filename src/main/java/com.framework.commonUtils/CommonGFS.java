@@ -113,7 +113,7 @@ public class CommonGFS {
 
         WebElement ele_FileType = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Download']")));
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", ele_FileTypes);
+        js.executeScript("arguments[0].scrollIntoView();", ele_FileType);
         ele_FileType.click();
     }
 
