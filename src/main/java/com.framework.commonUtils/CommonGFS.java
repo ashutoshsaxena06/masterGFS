@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,6 +19,8 @@ public class CommonGFS {
     public static WebDriver driver;
     public static WebDriverWait wait;
     public static String fileFormat = "CSV";
+    public static String unSelectedColumnNames ="//div[@class='unselectedColumns']/descendant::span";
+    public static String unSelectedColumnAdd ="//div[contains(@class,'unselectedColumns')]/descendant::span[contains(text(),'columnName')]/following-sibling::a";
 
     public void LogOutGFSAccount(WebDriver driver) {
 
@@ -112,15 +115,30 @@ public class CommonGFS {
     }
 
     private void chooseFileColumns() {
+        List<WebElement> unSelected = driver.findElements(By.xpath(unSelectedColumnNames));
+        List<String> columnsToSelect = new ArrayList<>();
 
-        for (String s : non_OG_Columns) {
-            //uncheck not required
-            logger.info(driver.findElement(By.xpath("//*[text()='" + s + "']/following-sibling::input")).getAttribute("class").contains("ng-empty") ? s + "- unchecked" : s + "- unchecked element - " + CheckUncheckElement(s));
+        for (WebElement we : unSelected) {
+            logger.info("unselected column - " + we.getText());
+            columnsToSelect.add(we.getText());
         }
-        for (String s : OG_Columns) {
-            //check required
-            logger.info(driver.findElement(By.xpath("//*[text()='" + s + "']/following-sibling::input")).getAttribute("class").contains("ng-not-empty") ? s + "- checked" : s + "- checked element - " + CheckUncheckElement(s));
+        for ( String s : columnsToSelect ) {
+            driver.findElement(By.xpath(unSelectedColumnAdd.replace("columnName", s))).click();
         }
+
+        List<WebElement> selectedColumns = driver.findElements(By.xpath("//div[contains(@class,'selectedColumns hasOverflow')]/descendant::span[@class='labels columnName ng-binding']"));
+        for (WebElement we : unSelected) {
+            logger.info("selected columns " + we.getText());
+        }
+
+//        for (String s : non_OG_Columns) {
+//            //uncheck not required
+//            logger.info(driver.findElement(By.xpath("//*[text()='" + s + "']/following-sibling::input")).getAttribute("class").contains("ng-empty") ? s + "- unchecked" : s + "- unchecked element - " + CheckUncheckElement(s));
+//        }
+//        for (String s : OG_Columns) {
+//            //check required
+//            logger.info(driver.findElement(By.xpath("//*[text()='" + s + "']/following-sibling::input")).getAttribute("class").contains("ng-not-empty") ? s + "- checked" : s + "- checked element - " + CheckUncheckElement(s));
+//        }
     }
 
     private boolean CheckUncheckElement(String s) {

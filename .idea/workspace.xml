@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e92938d5-2c54-401b-9424-c535f8cbfa82" name="Default Changelist" comment="" />
+    <list default="true" id="9864d8a9-3146-4390-ab20-6dcf2e9111bb" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,21 +11,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1QIBbgexSNgGSudeVa7oTTeQVV0" />
+  <component name="ProjectId" id="1UgvVkN9vHyOJW6FKOZ22A9BEFz" />
   <component name="PropertiesComponent">
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com.framework.commonUtils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\intelliWorkspace\masterGFS\src\main\java\com.framework.commonUtils" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\intelliWorkspace\masterGFS\src\main\java\com.framework.commonUtils" />
-      <recent name="D:\intelliWorkspace\masterGFS\src\main\java" />
-      <recent name="D:\intelliWorkspace\masterGFS\src\test\java\com\edge\GFS\online" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -40,7 +29,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="TestGFSExecutor.Export_Mail_OG" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="TestGFSExecutor" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="gfsOnline" />
       <extension name="coverage">
         <pattern>
@@ -50,8 +39,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.edge.GFS.online" />
       <option name="MAIN_CLASS_NAME" value="com.edge.GFS.online.TestGFSExecutor" />
-      <option name="METHOD_NAME" value="Export_Mail_OG" />
-      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
       <method v="2">
@@ -60,7 +48,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestGFSExecutor.Export_Mail_OG" />
+        <item itemvalue="TestNG.TestGFSExecutor" />
       </list>
     </recent_temporary>
   </component>
@@ -69,11 +57,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e92938d5-2c54-401b-9424-c535f8cbfa82" name="Default Changelist" comment="" />
-      <created>1567448304811</created>
+      <changelist id="9864d8a9-3146-4390-ab20-6dcf2e9111bb" name="Default Changelist" comment="" />
+      <created>1575791078681</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1567448304811</updated>
+      <updated>1575791078681</updated>
     </task>
     <servers />
   </component>
@@ -89,16 +77,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com.framework.commonUtils/CommonGFS.java</url>
-          <line>223</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
