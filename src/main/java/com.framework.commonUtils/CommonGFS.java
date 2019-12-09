@@ -241,6 +241,7 @@ public class CommonGFS {
         // Click Order guide option
         Thread.sleep(5000);
         OrderGuide(driver);
+        Thread.sleep(5000);
         WebElement btn_downArrowOrderGuideSelection = wait.until(ExpectedConditions
                 .visibilityOfElementLocated(By.xpath(".//*[@id='productList']/div/a[@class='actionsButton']")));
         btn_downArrowOrderGuideSelection.click();
