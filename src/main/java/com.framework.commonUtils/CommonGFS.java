@@ -3,6 +3,7 @@ package com.framework.commonUtils;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -110,10 +111,13 @@ public class CommonGFS {
     }
 
     private void clickDownload() {
-
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//div[@class='modal-buttons']")));
+        try {
+            Thread.sleep(2000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         WebElement ele_FileType = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Download']")));
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView();", ele_FileType);
         ele_FileType.click();
     }
 
