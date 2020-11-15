@@ -271,7 +271,7 @@ public class CommonGFS {
                     .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[contains(.,'Order Guide')]/*")));
             lnk_OrderGuide.click();
         } catch (Exception e) {
-            driver.get("https://apps.gfs.com/doc/desktop/index.html#/order_guide");
+            driver.get("https://apps.gfs.com/doc/desktop/index.html#/home_page");
             e.printStackTrace();
         }
     }
