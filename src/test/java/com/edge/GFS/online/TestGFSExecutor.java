@@ -191,7 +191,7 @@ public class TestGFSExecutor extends CommonGFS {
                 logger.info(restaurant_name + " for purveryor " + purveyor + " is Active !!");
                 et.log(LogStatus.INFO, restaurant_name + " and purveryor " + purveyor);
                 loginFlag = LoginGFS(driver, username.trim(), password.trim());
-                if (loginFlag == true) {
+                if (loginFlag) {
                         result = StepsToExport(driver, accountname);
                     if (result.equals(true)) {
                         emailMessageExport = "Pass";
@@ -207,7 +207,7 @@ public class TestGFSExecutor extends CommonGFS {
                         et.log(LogStatus.FAIL, detailedstatus);
                     }
                 } else {
-                    logger.info("Login failed - " + loginFlag);
+                    logger.info("Login status - " + loginFlag);
                     throw new Exception();
                 }
 

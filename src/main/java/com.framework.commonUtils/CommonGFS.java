@@ -196,13 +196,14 @@ public class CommonGFS {
     }
 
     public Boolean checkLoginStatus(WebDriver driver) {
-        String Current_URL = driver.getCurrentUrl();
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // Verify if login is sucess
+        // Verify if login is success
+        String Current_URL = driver.getCurrentUrl();
+        logger.info(Current_URL);
         if ("https://apps.gfs.com/doc/desktop/index.html#/home_page".equalsIgnoreCase(Current_URL)) {
             logger.info("Login Successful");
             logger.info("GFS - Home Page");
