@@ -184,7 +184,11 @@ public class CommonGFS {
 
         driver.get("https://apps.gfs.com/doc/desktop/index.html#/home_page");
         // Wait For Page To Load
-
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // pass login credentials
         driver.findElement(By.xpath("//*[@id='j_username']")).sendKeys(usernameGFS);
         driver.findElement(By.xpath("//*[@id='j_password']")).sendKeys(passwordGFS);
@@ -192,7 +196,6 @@ public class CommonGFS {
         driver.findElement(By.xpath("//*[@id='submit']")).click();
         boolean flag = checkLoginStatus(driver);
         return flag;
-
     }
 
     public Boolean checkLoginStatus(WebDriver driver) {
