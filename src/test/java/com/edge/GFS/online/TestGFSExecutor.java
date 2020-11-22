@@ -224,7 +224,7 @@ public class TestGFSExecutor extends CommonGFS {
         } catch (Exception e) {
             e.printStackTrace();
             exportstatus = "Failed";
-            if (loginFlag != true) {
+            if (!loginFlag) {
                 detailedstatus = "Invalid login credentials";
             } else {
                 detailedstatus = "Some technical issue ocurred during export";

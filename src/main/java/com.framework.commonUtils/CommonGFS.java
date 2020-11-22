@@ -182,7 +182,7 @@ public class CommonGFS {
 
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-        driver.get("https://apps.gfs.com/doc/desktop/index.html#/home_page");
+        driver.get("https://apps.gfs.com/experience/portal/dispatch.do?applicationName=doc");
         // Wait For Page To Load
         try {
             Thread.sleep(3000);
@@ -207,7 +207,7 @@ public class CommonGFS {
         // Verify if login is success
         String Current_URL = driver.getCurrentUrl();
         logger.info(Current_URL);
-        if ("https://apps.gfs.com/doc/desktop/index.html#/home_page".equalsIgnoreCase(Current_URL)) {
+        if (Current_URL.contains("https://apps.gfs.com/doc/desktop/index.html#")) {
             logger.info("Login Successful");
             logger.info("GFS - Home Page");
             return true;
@@ -241,7 +241,6 @@ public class CommonGFS {
         // check for Alert
 //        isAlertPresent(driver);
         // ORDER GUIDE PAGE
-        driver.get("https://apps.gfs.com/doc/desktop/index.html#/account");
 
         // Check select account 1
         // checkAccountPage(driver, AcName);
@@ -281,17 +280,13 @@ public class CommonGFS {
     }
 
     private void checkAccountPage(WebDriver driver, String AcName) {
-
         String AccountPageUrl = "https://apps.gfs.com/doc/desktop/index.html#/account";
         if (AccountPageUrl.equalsIgnoreCase(driver.getCurrentUrl())) {
-
-            selectAccount(driver, AcName);
-            logger.info("Account name selected :-" + AcName);
-
-        } else {
-
-            logger.info("No account selection page appeared.");
+            driver.get("https://apps.gfs.com/doc/desktop/index.html#/account");
+            logger.info("re launched account page URL");
         }
+        selectAccount(driver, AcName);
+        logger.info("Account name selected :-" + AcName);
     }
 
     private void selectAccount(WebDriver driver, String AcName) {
