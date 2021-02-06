@@ -82,7 +82,7 @@ public class TestGFSExecutor extends CommonGFS {
         er.endTest(et);
         acno++;
         try {
-            driver.close();
+            driver.quit();
         } catch (Exception e) {
             System.out.println("already closed");
         }
