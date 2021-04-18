@@ -190,10 +190,10 @@ public class CommonGFS {
             e.printStackTrace();
         }
         // pass login credentials
-        driver.findElement(By.xpath("//*[@id='j_username']")).sendKeys(usernameGFS);
-        driver.findElement(By.xpath("//*[@id='j_password']")).sendKeys(passwordGFS);
+        driver.findElement(By.xpath("//*[@id='username']")).sendKeys(usernameGFS);
+        driver.findElement(By.xpath("//*[@id='password']")).sendKeys(passwordGFS);
 
-        driver.findElement(By.xpath("//*[@id='submit']")).click();
+        driver.findElement(By.xpath("//*[@name='submit']")).click();
         boolean flag = checkLoginStatus(driver);
         return flag;
     }
